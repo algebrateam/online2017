@@ -6,5 +6,5 @@
  * and open the template in the editor.
  */
 
-echo 'Hi there folks!!!';
+echo 'Hi there folks :)!!!';
 
