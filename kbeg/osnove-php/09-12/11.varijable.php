@@ -20,14 +20,19 @@ $$naziv_var=35;
 echo "<br>".$iznos;
 
 
-echo "<hr>";
+echo "<hr> reference<br>";
 
 $aa='Algebra';
+
+echo "varijabla aa=".$aa;
+
 $b=&$aa;
 
-echo $b;
+echo "<br>varijabla b=".$b;
 
-$aa='KraAlgebra';
+
+echo "<br>";
+$aa='Braglebla';
 echo $b;
 
 echo "<hr>";
@@ -73,21 +78,22 @@ $broj1=2;
 $broj2=2.4353;
 echo $broj1;
 
-
+echo "<hr> CAST VARIJABLI<br><br>";
 $a=NULL;
 $a="10.9";
 $a=(double)$a;
 
-echo "pokušamo castati (int) a ".$a;
+echo "<br>pokušamo castati (int) a ".(int)$a;
  //unset($a);
-echo "pokušamo castati (int) a ".$a;
+//$a=(int)$a;
+echo "<br>pokušamo castati (int) a ".$a;
 //if(isset($a)){
 if(FALSE){
 
 	echo 'postavljena je vrijednost varijable $a<br>';
 }
 else{
-		echo 'nije postavljena vrijednost varijable $a<br>';
+		echo '<br>nije postavljena vrijednost varijable $a<br>';
 }
 
 if(is_float($a)){
@@ -105,6 +111,11 @@ else
  echo "<hr>";
 echo "var je??? ".gettype($a).var_dump($a);
 echo "<br>varijabla : ".$a;
+echo "<br>sa print_r:<br>";
+print_r($a);
+
+echo "<br>sa var_dump:<br>";
+var_dump($mojnekiarra);
 
 echo "<hr><b>polja:</b><br>";
 $polje=array('prvi',
