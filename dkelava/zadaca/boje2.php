@@ -898,27 +898,25 @@ foreach ($new_boje as $value) {
 }
 
 $new_arr1 = [];
-$new_arr2 = [];
 foreach ($arr as $key) {
     foreach ($key as $k => $v) {
-        if($k % 2 == 0){
-         array_push($new_arr2, $v);
-        }else{
-         array_push($new_arr1, $v);  
+        array_push($new_arr1, $v);
+        for ($i = 0; $i < count($new_arr1)-1; $i+=2) {
+          $new_arr2[$new_arr1[$i+1]]=$new_arr1[$i];  
         }
     }   
 }
-$final = array_combine($new_arr1, $new_arr2);
-   
+  
 echo "<pre>";
-print_r ($final);
+print_r ($new_arr2);
 echo "</pre>";
 
-foreach($final as $key => $value){ 
+foreach($new_arr2 as $key => $value){ 
     echo "<pre>";
     echo "<p style='margin-right:500px;background-color:#".$key."';>".$value."</p>";
     echo "</pre>";
 }
+
 
 
 
