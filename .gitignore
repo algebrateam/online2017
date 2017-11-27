@@ -20,3 +20,9 @@ Homestead.json
 .rocketeer/
 /nbproject/private/
 /nbproject/
+
+#KDevelop stuff
+.kdev4/
+online2017.kdev4
+
+pmrvic/osnove-php/hello world u html-u.html
