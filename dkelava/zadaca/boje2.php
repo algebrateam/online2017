@@ -1,10 +1,6 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 $input=    
 'air_force_blue_raf,"Air Force Blue (Raf)",5d8aa8,93,138,168
 air_force_blue_usaf,"Air Force Blue (Usaf)",00308f,0,48,143
