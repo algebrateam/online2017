@@ -8,7 +8,7 @@ ključem. Prikazati višedimenzionalna polja i rad s njima.
 Obraditi print_r() funkciju.
 */
 
-/*
+
 // Indeksirani array
 $polje = array('tesla','bell','edison' );
 echo "polje sa indeksom 0 ima vrijednost: "
@@ -82,7 +82,7 @@ foreach ($polje as $sifre => $boje) {
 echo "<tr><td>".$sifre."</td><td>".$boje."</td></tr>\n";
 }
 echo "</table>";
-*/
+
 echo "<hr>";
 
 
