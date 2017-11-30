@@ -96,3 +96,14 @@ echo $a." / ".$b." = ".($a/$b)."<br>";
 echo $a." % ".$b." = ".($a%$b)."<br>";
 echo "<hr>";
 
+echo "<h1>7. zadatak</h1>";
+echo 'Postavite sada vrijednost varijabla $a i $b iz prethodnog zadatka na vrijednosti 4 i 2'
+. ' i ponovno učitajte stranicu.<br>';
+$a=4;
+$b=2;
+echo $a." + ".$b." = ".($a+$b)."<br>";
+echo $a." - ".$b." = ".($a-$b)."<br>";
+echo $a." * ".$b." = ".($a*$b)."<br>";
+echo $a." / ".$b." = ".($a/$b)."<br>";
+echo $a." % ".$b." = ".($a%$b)."<br>";
+echo "<hr>";
