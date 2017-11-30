@@ -76,4 +76,23 @@ $a += 5;
 echo "Varijabla a uvećana za 5 operacijom dodjeljivanja iznosi: ".$a.".<br>";
 echo "<hr>";
 
+echo "<h1>6. zadatak</h1>";
+echo 'Napravite PHP stranicu s dvije varijable $a = 7 i $b = 3. Zatim na ekranu ispišite rezultate'
+. ' aritmetičkih operacija na sljedeći način:<br>';
+echo "a. 7 + 3 = 10<br>"
+        . "b. 7 - 3 = 4<br>"
+        . "c. 7 * 3 = 21<br>"
+        . "d. 7 / 3 = 2,333333<br>"
+        . "e. 7 % 3 = 1<br>";
+echo "<br>";
+
+$a=7;
+$b=3;
+
+echo $a." + ".$b." = ".($a+$b)."<br>";
+echo $a." - ".$b." = ".($a-$b)."<br>";
+echo $a." * ".$b." = ".($a*$b)."<br>";
+echo $a." / ".$b." = ".($a/$b)."<br>";
+echo $a." % ".$b." = ".($a%$b)."<br>";
+echo "<hr>";
 
