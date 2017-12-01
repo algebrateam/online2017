@@ -1,13 +1,6 @@
 <?php
 
-/*
-Izolirati sve nazive boja i array_push u novi array.
- 
- ispisati sve boje kao html table
-hint expolode(), implode()....
-*/
 
- 
 $input=    
 'air_force_blue_raf,"Air Force Blue (Raf)",5d8aa8,93,138,168
 air_force_blue_usaf,"Air Force Blue (Usaf)",00308f,0,48,143
@@ -57,7 +50,7 @@ bazaar,"Bazaar",98777b,152,119,123
 beau_blue,"Beau Blue",bcd4e6,188,212,230
 beaver,"Beaver",9f8170,159,129,112
 beige,"Beige",f5f5dc,245,245,220
-big_dip_o_ruby,"Big Dip O’Ruby",9c2542,156,37,66
+big_dip_o_ruby,"Big Dip O�Ruby",9c2542,156,37,66
 bisque,"Bisque",ffe4c4,255,228,196
 bistre,"Bistre",3d2b1f,61,43,31
 bittersweet,"Bittersweet",fe6f5e,254,111,94
@@ -124,8 +117,8 @@ cadmium_green,"Cadmium Green",006b3c,0,107,60
 cadmium_orange,"Cadmium Orange",ed872d,237,135,45
 cadmium_red,"Cadmium Red",e30022,227,0,34
 cadmium_yellow,"Cadmium Yellow",fff600,255,246,0
-caf_au_lait,"Café Au Lait",a67b5b,166,123,91
-caf_noir,"Café Noir",4b3621,75,54,33
+caf_au_lait,"Caf� Au Lait",a67b5b,166,123,91
+caf_noir,"Caf� Noir",4b3621,75,54,33
 cal_poly_green,"Cal Poly Green",1e4d2b,30,77,43
 cambridge_blue,"Cambridge Blue",a3c1ad,163,193,173
 camel,"Camel",c19a6b,193,154,107
@@ -364,7 +357,7 @@ green_ryb,"Green (Ryb)",66b032,102,176,50
 green_yellow,"Green-Yellow",adff2f,173,255,47
 grullo,"Grullo",a99a86,169,154,134
 guppie_green,"Guppie Green",00ff7f,0,255,127
-halay_be,"Halayà úBe",663854,102,56,84
+halay_be,"Halaya �Be",663854,102,56,84
 han_blue,"Han Blue",446ccf,68,108,207
 han_purple,"Han Purple",5218fa,82,24,250
 hansa_yellow,"Hansa Yellow",e9d66b,233,214,107
@@ -785,7 +778,7 @@ teal,"Teal",008080,0,128,128
 teal_blue,"Teal Blue",367588,54,117,136
 teal_green,"Teal Green",00827f,0,130,127
 telemagenta,"Telemagenta",cf3476,207,52,118
-tenn_tawny,"Tenné (Tawny)",cd5700,205,87,0
+tenn_tawny,"Tenn� (Tawny)",cd5700,205,87,0
 terra_cotta,"Terra Cotta",e2725b,226,114,91
 thistle,"Thistle",d8bfd8,216,191,216
 thulian_pink,"Thulian Pink",de6fa1,222,111,161
@@ -875,37 +868,51 @@ yellow_ryb,"Yellow (Ryb)",fefe33,254,254,51
 zaffre,"Zaffre",0014a8,0,20,168
 zinnwaldite_brown,"Zinnwaldite Brown",2c1608,44,22,8';
 
-#Uzimaj red po red i stavljaj u niz 864 x 1
-$input_by_line=explode("\n", $input); 
-
-#ispiši samo četiri člana jer je ulazni niz dugačak
-echo "<br>Ispis nakon prebacivanja u array";
-echo "<pre>";
-print_r(array_slice($input_by_line,0,4));
-echo "</pre>";
-
-#pripremi novo prazno polje
-$boja=array();
-
-#Svaki red rastavi u posebno polje 1 X 6
-foreach ($input_by_line as $key => $value) {
-    $red=explode(',',$value);
-    
-    #skini dvostruke navodnike
-    $red[1]=trim($red[1],'"');
-    
-    #dodaj članove u pripremljeno polje
-    $boja[$red[2]]=$red[1];
+// SAMO ZA POTREBE SCREENSHOTA
+function sortBoje($boje, $limit){
+    for ($i = 0; $i <= $limit; $i++) {
+    $new_boje[] =  $boje[$i];   
+    }
+    return $new_boje;
 }
 
-#ispis prva 4 elementa niza
-echo "<br>Ispis nakon pročišćavanja nepotrebnog";
+$boje = explode("\n",$input);
+$limit = 3;
+$sorted = sortBoje($boje, $limit);
+
 echo "<pre>";
-print_r(array_slice($boja,0,4));
+print_r($sorted);
+echo "</pre>";
+// SAMO ZA POTREBE SCREENSHOTA
+
+for ($i = 0; $i <= $limit; $i++) {
+    $new_boje[] = explode(",", $boje[$i]);   
+}
+
+foreach ($new_boje as $value) {
+    $arr[] = array_slice($value, 1,2);
+}
+
+$new_arr1 = [];
+foreach ($arr as $key) {
+    foreach ($key as $k => $v) {
+        array_push($new_arr1, $v);
+        for ($i = 0; $i < count($new_arr1)-1; $i+=2) {
+          $new_arr2[$new_arr1[$i+1]]=$new_arr1[$i];  
+        }
+    }   
+}
+  
+echo "<pre>";
+print_r ($new_arr2);
 echo "</pre>";
 
-#prikaz boja
-echo "<br>Ispis boja";
-foreach (array_slice($boja,0,4) as $key=>$value){
-    echo "<div style='margin-top: 2px;padding-left: 20px; border-radius: 25px; color: white;text-shadow: 1px 1px 2px black, 0 0 15px blue, 0 0 5px darkblue; background-color:#".$key."'>".$value."</div>";
+foreach($new_arr2 as $key => $value){ 
+    echo "<pre>";
+    echo "<p style='margin-right:500px;background-color:#".$key."';>".$value."</p>";
+    echo "</pre>";
 }
+
+
+
+
