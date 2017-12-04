@@ -21,7 +21,8 @@ $b=($a<5)?"ispunjen uvjet":"nije ispunjen";
 //<uvijet>?TRUE:FALSE
 echo $b;
 
-$boja="zlatna";
+echo "<hr>";
+$boja="srebrna";
 
 switch ($boja){
  case "plava": echo "Boja je plava"; break;  
@@ -30,7 +31,7 @@ switch ($boja){
  case "zlatna":
  case "zuta": echo "Boja je zutaaa"; break;
  case "svjetlo crna": echo "Boja je scrna"; break;
- default: echo "nisam nasao boju"; break;   
+ default: echo "nisam nasao boju";   
     
 }
 
