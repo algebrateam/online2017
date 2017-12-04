@@ -8,7 +8,35 @@ funkcije za rad s poljima (is_array(), explode(), implode(),
 split(), count(), end(), array_search(), in_array()).
 
 */
+/*
+$fruits=['1','2','2','3'];
+$fruits[]=7;
+array_push($fruits, 77);
+
+print_r($fruits);
+echo "polje fruits ima ".count($fruits)." članova<br>";
 unset($fruits);
+###################
+
+$fruits=array('1','2','2',5=>'3');
+array_push($fruits, 88);
+$fruits[10]=888;
+array_push($fruits, 8888);
+
+print_r($fruits);
+echo "polje fruits ima ".count($fruits)." članova<br>";
+
+echo "<ul>";
+while(count($fruits)!=0){
+echo "<li>".array_pop($fruits)."</li>";
+}
+echo "</ul>";
+
+print_r($fruits);
+echo "polje fruits ima ".count($fruits)." članova<br>";
+unset($fruits);
+
+*/
 $fruits = array(0=> 'limun', 
 	            'a'=> 'naranca', 
 	             1 => 'banana',
@@ -21,6 +49,7 @@ echo "polje fruits ima ".count($fruits)." članova<br>";
 
 $brojelemenata=0;
 
+#foreach ($fruits as $key => $value) {}
 foreach ($fruits as $key => $value) {
 	$brojelemenata++;
 }
@@ -54,6 +83,7 @@ foreach ($fruits as $key => $value) {
 }
 echo "<br>zadnji element je:".$value;
 echo "<hr>";
+unset($value);
 
 // Na sljedeći način preskačemo zadane elemente arraya
 $brojelemenata = 0;
@@ -68,8 +98,10 @@ foreach ($fruits as $key => $value) {
 
 echo "<br>treće polje sa ključem $key ima vrijednost: ".$value;
 
-echo "<br>zadnji element polja je ".end($fruits);
-
+echo "<hr>zadnji element polja je: ".end($fruits);
+echo "<pre>";
+print_r($fruits);
+echo "<pre>";
 
 /// Pretraživanje polja
 
@@ -89,6 +121,7 @@ function myfunction($num)
 }
 
 $a=array(1,2,3,4,5);
+print_r($a);
 print_r(array_map("myfunction",$a));
 $a=array_map("myfunction",$a);
 print_r($a);
@@ -118,9 +151,6 @@ if(in_array('banana', $fruits)){
 }
 else{ 
 	echo "nema banane :( ";
-}
-foreach ($fruits as $value) {
-	echo $value;
 }
 
 
