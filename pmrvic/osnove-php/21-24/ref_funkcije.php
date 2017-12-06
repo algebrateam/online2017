@@ -8,6 +8,7 @@ function potencija(&$var,$n=2){
  // $var=pow($var,$n);
   
   // treći način
+   // kao $var^2   == $var**2
   $var=$var**$n;
 
 // drugi način

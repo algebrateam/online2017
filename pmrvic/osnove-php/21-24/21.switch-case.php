@@ -22,7 +22,7 @@ switch($naziv){
    
     case 'Wien':
     case 'Wien1':
-    case 'Wien2': //   echo "grad je Beč"; break;
+    case 'Beč': //   echo "grad je Beč"; break;
 	case 'Vienna':  echo "grad je Beč"; break;
 
 
