@@ -39,7 +39,7 @@ function br(){
 	echo "<br>";
 }
 */
-function br($broj_novih_redova){
+function br($broj_novih_redova=1){
 	/*
 	for($i=0;$i<=$broj_novih_redova;$i++){
 		echo "<br>";	
@@ -66,7 +66,7 @@ mojispis($nekiarray);
 br(3);
 mojispis($nekiarray);
 mojispis($nekiarray);
-br(1);
+br();
 mojispis($nekiarray);
 
 

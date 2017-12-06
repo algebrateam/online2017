@@ -21,10 +21,12 @@ nekafunk(1,3.14,NULL,"Heloo everyone!",'a',array('sa','df','bv'));
 
 // Definicije funkcija sum() i avg()
 function sum(){echo "<br>pokreni sum()<br>";}
+function tum(){echo "<br>pokreni tum()<br>";}
 function avg(){echo "<br>pokreni avg()<br>";}
 
+function cherry_blossom_pink(){echo "cbp";}
 
-$func_name='sum';
+$func_name='cherry_blossom_pink';
 $func_name();
 
 $func_name='avg';
