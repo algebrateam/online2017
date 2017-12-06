@@ -26,6 +26,8 @@ $a--;
 echo "<br> Smanjivanje vrijednosti varijable = "; echo $a;
         
 $b = floatval($a);
+var_dump($b);
+
 
 echo "<hr> Odgovor na zadatak broj 4. je: " .$b;
 
