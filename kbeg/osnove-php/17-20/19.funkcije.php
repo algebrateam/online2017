@@ -45,46 +45,24 @@ function zbroj($x,$y=0){
     print_r(func_get_args());
     echo "<pre>";
     
-   static $suma=0;
-  // echo "<br><b>".$suma."</b>";
+   
     if(func_num_args()>3){
         
-        #  
         #  nagradni zadatak za + 
-        #  
-        // šaljemo jedan po jedan član polja na zbrajanje
-         array_map("zbroj",func_get_args());
-         
-         // pohranimo STATIC rezultat u privremenu varijablu
-         $rezultat=$suma;
-         
-         // poništimo STATIC varijablu
-         $suma=NULL;
-         return $rezultat;
-
-         # Drugi način je da prošetamo kroz sve elemente polja i pozbrajamo ih
-        /*
-        
+        # $zbroj+= array_map("zbroj",func_get_args());
         $zbroj=0;
         foreach (func_get_args() as $value) {
             $zbroj+=$value;
         }
         return $zbroj;
-         
-         */
-         
-         
         # jedan od načina je koristiti gotovu aray_sum funkciju
-      // return array_sum(func_get_args()); 
+       # return array_sum(func_get_args()); 
     }
     
     if(func_num_args()==3){
        return $x+$y+func_get_arg(2); 
     }
     else{
-        
-        // Svaki član niza pribrojimo STATIC varijabli
-        $suma+=$x;
        return $x+$y;
     }
 }
