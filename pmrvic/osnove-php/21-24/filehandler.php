@@ -1,15 +1,20 @@
 <?php
 echo "File handler";
 
-$filename='ucenici.txt';
+$filename='./ucenici.txt';
 /*
 $handle=fopen($filename, 'r+');
-$contents=fread($handle, filesize($filename)!=0?filesize($filename):1);
+//$contents=fread($handle, filesize($filename)!=0?filesize($filename):1);
 
-fwrite($handle, "UPIS NA POČETAK %%%%%%%%%%\n");
-fclose($handle);
+//$contents=fread($handle, filesize($filename)!=0?filesize($filename):1);
+$contents= fgets($handle);
+$contents= fgets($handle);
+
+fwrite($handle, "upis izmedju 2 i 3 linije XXXXXXX");
+
 
 echo $contents;
+fclose($handle);
 */
 // korištene funkcije
 /*
@@ -27,5 +32,5 @@ print_r($datoteka);
 foreach ($datoteka as $key => $value) {
 	echo "broj linije:".$key." value:".$value."<br/>";
 }
-
+/**/
 ?>
