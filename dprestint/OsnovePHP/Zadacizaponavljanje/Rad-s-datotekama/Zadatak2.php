@@ -17,8 +17,8 @@
 
 if(isset($_GET['ime'])){
     $filename = 'upisIzForme.txt';
-    $handle = fopen($filename, 'a');  // mogli smo i w
-    fwrite($handle, $_GET['ime']);  //filter_input()
+    $handle = fopen($filename, 'a');  
+    fwrite($handle, $_GET['ime']);  
     fclose($handle);
 }
 
