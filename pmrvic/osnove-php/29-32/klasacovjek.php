@@ -5,21 +5,22 @@ echo "Klase i objekti<br>";
 class covjek{
 	// var $ime="moje defaoultno ime";
     protected $ime;
+    //private $ime;
 
-    function __construct($novoime){
+    function __construct($novoime='John Doe'){
     	//provjera($novoime);
     	if (gettype($novoime)!='string'){
     		echo "alo brale ime mora nbiti string";
     		exit;
     	}
     	else{
-    	$this->ime=$novoime;	
+    	$this->ime=ucfirst($novoime);	
     	}
     	
     }
 
 	public function set_ime($ime){
-		$this->ime=$ime;
+		$this->ime=ucfirst($ime);
 	}
 	function get_ime(){
 		return $this->ime;
@@ -32,12 +33,13 @@ class covjek{
 
 }
 
-$c1=new covjek('Ivica');
+$c1=new covjek();
+//echo "ispis public imena: +++++ ".$c1->ime;
 
-echo "Kreiran je covjek:".$c1->get_ime();
+echo "<br>Kreiran je covjek:".$c1->get_ime();
 echo "<br>";
 
-$c1->set_ime("Marko");
+$c1->set_ime("marko");
 echo "<br>Moje ime je ".$c1->get_ime();
 
 $c1->set_ime("Dalibor");
