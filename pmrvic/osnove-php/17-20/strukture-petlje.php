@@ -12,7 +12,7 @@ if ($a > 10) {
     echo "a je manji od 8";
 }
 
-echo "<hr>";
+
 echo "<hr>";
 
 # varijabla mora biti manja od 5 ili veća od 10
