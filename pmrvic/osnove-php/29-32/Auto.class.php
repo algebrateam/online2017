@@ -14,11 +14,39 @@
 include 'IAuto.class.php';
 
 abstract class Auto implements IAuto{
-    var $brojvrata=5;
-    var $kilovata=100;
-    var $boja="crna";
+    /**
+     * Unutar klase kombinacija 
+     * lijevi alt+insert -> generate getters and setters
+     * @var type 
+     */
     
-    //put your code here
+    private $brojvrata=5;
+    private $kilovata=100;
+    private $boja="crna";
+    
+    public function getBrojvrata() {
+        return $this->brojvrata;
+    }
+
+    public function getKilovata() {
+        return $this->kilovata;
+    }
+
+    public function getBoja() {
+        return $this->boja;
+    }
+
+    public function setBrojvrata($brojvrata) {
+        $this->brojvrata = $brojvrata;
+    }
+
+    public function setKilovata($kilovata) {
+        $this->kilovata = $kilovata;
+    }
+
+    public function setBoja($boja) {
+        $this->boja = $boja;
+    }
     public function gazi() {
         echo "<br>Gazim!";
     }
@@ -38,3 +66,6 @@ abstract class Auto implements IAuto{
         // makar bila prazna
     }
 }
+// NE MOŽE SE INSTANCIRATI ABSTRAKTNA KLASA
+// MORA SE PRIJE NASLIJEDITI
+//$a1=new Auto();
