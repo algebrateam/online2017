@@ -17,8 +17,7 @@ abstract class Lik {
     public abstract function opseg();   
     public abstract function povrsina();
     public function toString() {        
-        //echo "\nJa sam objekt ".get_class($this).", a nastao sam iz klase ".CLASS;
-        echo "\nJa sam objekt ".get_class($this).", a nastao sam iz klase Lik<br>";     //editirano
+        echo "\nJa sam objekt ".get_class($this).", a nastao sam iz klase ".__CLASS__."<br>";     //editirano
     }
 }
 
@@ -60,7 +59,7 @@ class Kvadrat extends Lik implements IKvadrat {
 
 class Krug extends Lik implements ILik{
     private $r; // polumjer kruga
-    private $boja="plava";
+    private $boja="zelena";
     private $srediste="x y";
     function __construct($r) {
     // postavi svojstvo polumjera
