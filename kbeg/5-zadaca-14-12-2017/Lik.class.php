@@ -53,14 +53,15 @@ class Kvadrat extends Lik implements IKvadrat {
         return $this->a * $this->a;         // <-- dodano
     }
     
-    public function brojstranica() {    // <-- dodano
+    public function brojstranica() {        // <-- dodano
         return 4;
     }
 }
 
 class Krug extends Lik implements ILik{
     private $r; // polumjer kruga
-    private $boja='crvena';
+    private $boja="plava";
+    private $srediste="x y";
     function __construct($r) {
     // postavi svojstvo polumjera
         $this->r = $r;
@@ -80,6 +81,10 @@ class Krug extends Lik implements ILik{
     public function boja(){
        return $this->boja; 
     }
+    
+    public function srediste(){
+        return $this->srediste;
+    }
 }
 
 // kreiraj krug polumjera 5
@@ -96,16 +101,21 @@ echo "<br>";
 
 // ispiši opis klase
 echo "Opis klase: ";
-$k1->toString();
+echo $k1->toString();
 echo "<br>";
 
-echo "Boja kruga: ";
-$k1->boja();
-echo "<br>";
 // postavi i ispiši boju kruga
 // ?
+echo "Boja kruga: ";
+echo $k1->boja();
+echo "<br>";
+
 // postavi i ispiši koordinatu središta kruga
 // ?
+echo "Središte kruga: ";
+echo $k1->srediste();
+echo "<br>";
+// 
 // kreiraj kvadrat stranice 5
 $k2 = new Kvadrat(5);
 
@@ -114,10 +124,15 @@ echo "Opseg kvadrata: ";
 echo $k2->opseg();
 echo "<br>";
 
+// ispiši broj stranica kvadrata
+// ?
+echo "Broj stranica kvadrata: ";
+echo $k2->brojstranica();
+echo "<br>";
+
 // ispiši opis klase
 echo "Opis klase: ";
 $k2->toString();
 echo "<br>";
 
-// ispiši broj stranica kvadrata
-// ?
+
