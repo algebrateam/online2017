@@ -1,8 +1,8 @@
 <?php
 
 class Pas {
-    var $name;
-    var $tezina;
+    public $name;
+    public $tezina;
 
     function __construct($name, $tezina)
     {
@@ -28,9 +28,10 @@ $a[] = new Pas("Floki", 11);
 $a[] = new Pas("Mrto", 3);
 $a[] = new Pas("brljo", 5);
 $a[] = new Pas("Lajka", 9);
+array_push($a, new Pas('Rex',3));
 
 foreach ($a as $item) {
-    echo $item->name . "\n";
+    echo $item->name."(".$item->tezina .") ";
 }
 echo "<br>";
 //usort($a, array ("Pas","cmp_obj"));
@@ -38,6 +39,8 @@ echo "<br>";
 usort($a, "Pas::cmp_obj");
 
 foreach ($a as $item) {
-    echo $item->name . "\n";
+     echo $item->name."(".$item->tezina .") ";
 }
+
+echo "<br>najveci pas je ".end($a)->name;
 ?>
