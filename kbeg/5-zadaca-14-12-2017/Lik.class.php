@@ -18,6 +18,7 @@ abstract class Lik {
     public abstract function povrsina();
     public function toString() {        
         //echo "\nJa sam objekt ".get_class($this).", a nastao sam iz klase ".CLASS;
+        echo "\nJa sam objekt ".get_class($this).", a nastao sam iz klase ";
     }
 }
 
@@ -42,11 +43,19 @@ class Kvadrat extends Lik implements IKvadrat {
     public function opseg() {
         // vrati opseg
         // return 
+        $opseg=4*$a;                    // <-- dodano
+        return $opseg;                  // <-- dodano
     }
 
     public function povrsina() {
         // vrati povrsinu
         //return
+        $povrsina=a*a;                  // <-- dodano
+        return $povrsina;               // <-- dodano
+    }
+    
+    public function brojstranica() {    // <-- dodano
+        return 4;
     }
 }
 
