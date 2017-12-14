@@ -22,3 +22,8 @@ $a1->vozi();
 echo $a1->get_model();
 
 $a2->ispis();
+$a1->ispis();
+$a1->setBoja('Maroon');
+$a1->setKilovata(150);
+
+$a1->ispis();

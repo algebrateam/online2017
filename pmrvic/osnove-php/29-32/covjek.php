@@ -34,8 +34,6 @@ class covjek{
 	function __destruct(){
 	//	 echo "<br>nema više objekta zvanog ".$this->ime;
 	}
-
-
 }
 
 
