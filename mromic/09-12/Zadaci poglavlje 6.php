@@ -12,7 +12,7 @@ $imena = array('Iva','Ema','Anja','Vanja','Sanja');
         
         foreach($imena as $ime)       
 {
-    echo $ime;
+    echo "<br>". $ime;
 }
 echo "<hr>";
 
@@ -28,17 +28,41 @@ echo "<hr>";
 echo 'Odgovor na zadatak broj 3. je: ';
 echo "<br>";
 
-asort($imena);
+sort($imena);
 
-for($i=0; $i<=4; $i++)
-{
-     echo $imena[$i];
+for ($i = 0; $i <= count($imena)-1; $i++) {
+    echo $imena[$i] . "<br/>";
 }
 
+echo "<hr>";
+
+echo 'Odgovor na zadatak broj 4. je: ';
+
+echo "<br>";
 
 
+$imena = array("e" => 'Iva', "d" => 'Ema', "c" => 'Anja', "b" => 'Vanja', "a"=>'Sanja');
 
 
+print_r($imena);
+
+ksort($imena);
+
+foreach ($imena as $key => $ime)
+{    echo "<br>". $key;
+}
+
+echo "<hr>";
+
+echo 'Odgovor na zadatak broj 5. je: ';
+
+echo "<br>";
 
 
+for ($i = 1; $i <= 100; $i++)
+
+foreach (array($i) as &$lista) {
+    echo  $lista;
+
+}
 

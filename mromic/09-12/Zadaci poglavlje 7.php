@@ -10,7 +10,6 @@ echo 'Zadatak broj 1. <br>';
 $mjeseci = array("siječnja", "veljače", "ožujka", "travnja", "svibnja", "lipnja", "srpnja", "kolovoza", "rujna", "listopada", "studenog", "prosinca"); 
 $danas_mjesec=date(n); 
 setlocale (LC_TIME,'croatian'); 
-$dan = strftime('%F'); 
 echo "$danas_mjesec";
 
         
