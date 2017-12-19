@@ -55,19 +55,53 @@ for($i=1; $i <=10; $i++){
             ?>
     </td>
     <td>
-        
-     <?php
-     for($i=1; $i <=10; $i++){
-   echo $data[$i] ["placeno"], "<br>" ;
-   echo "<hr />";
-     }
-             
-   
-             
-?>
-        
+        <p><select></p>
+        <option value="Da" selected>Da</option>
+  <option value="Ne">Ne</option>
+ </select>
+      <p><select></p>
+  <option value="Da">Da</option> 
+  <option value="Ne" selected>Ne</option>
+   </select>
+  <p><select></p>
+  <option value="Da">Da</option> 
+  <option value="Ne" selected>Ne</option>
+   </select>
+  <p><select></p>
+  <option value="Da" selected>Da</option>
+  <option value="Ne" >Da</option>
+   </select>
+  <p><select></p>
+  <option value="Da">Da</option> 
+  <option value="Ne" selected>Ne</option>
+   </select>
+  <p><select></p>
+  <option value="Da">Da</option> 
+  <option value="Ne" selected>Ne</option>
+   </select>
+  <p><select></p>
+  <option value="Da" selected>Da</option>
+  <option value="Ne">Ne</option>
+   </select>
+  <p><select></p>
+  <option value="Da" selected>Da</option>
+  <option value="Ne">Ne</option>
+   </select>
+  <p><select></p>
+  <option value="Da">Da</option> 
+  <option value="Ne" selected>Ne</option>
+   </select>
+  <p><select></p>
+  <option value="Da" selected>Da</option>
+  <option value="Ne">Ne</option>
+   </select>
+  </td>
+ 
   
-       </td>
+ 
+        
+   
+      </td>
       </tr>
     </table>
 
