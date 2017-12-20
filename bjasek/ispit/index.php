@@ -1,7 +1,9 @@
 <?php
 
 include 'data.php';
-
+ echo $data[6]['prezime']."<br>"; 
+ print_r($data);
+ 
 echo "<table border='1'>";
 echo "<tr>
 <th>Ime</th>

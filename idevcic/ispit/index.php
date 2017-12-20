@@ -31,6 +31,9 @@ foreach ($data as $key => $value ) {
     else {
 	print '<td style="border: 1px solid black;"><select name="text"><option value="value1" selected>Ne</option><option value="value2">Da</option><select></td>';
     }
+    print '<td style="border: 1px solid black;"><select name="text"><option value="value1" ';
+    echo ($paid=="Da")?'selected>Da': 'selected>Ne';
+    print '</option><option value="value2">Da</option><select></td>';
     
 	print '</tr>';
     
