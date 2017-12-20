@@ -3,8 +3,12 @@
 class customException extends Exception {
   public function errorMessage() {
     //error message
-    $errorMsg = 'Error on line '.$this->getLine().' in '.$this->getFile()
-    .': <b>'.$this->getMessage().'</b> is not a valid E-Mail address';
+    $errorMsg = 'Error on line '
+            .$this->getLine()
+            .' in '
+            .$this->getFile()
+            .': <b>'
+            .$this->getMessage().'</b> is not a valid E-Mail address';
     return $errorMsg;
   }
 }
@@ -30,4 +34,6 @@ catch (customException $e) {
 catch(Exception $e) {
   echo $e->getMessage();
 }
+
+echo "<hr> bez obzira na email, radim ja i dalje...";
 

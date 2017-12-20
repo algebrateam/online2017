@@ -8,13 +8,10 @@ function checkNum($number) {
   return true;
 }
 
-// namjerno radimo gresku
-checkNum(2);
 
-
-
+echo "<hr> ispred greske<br>";
 //Otkomentiraj za hvatanje
-/*
+
 //trigger exception in a "try" block
 try {
   checkNum(2);
@@ -26,4 +23,4 @@ try {
 catch(Exception $e) {
   echo 'Message: ' .$e->getMessage();
 }
-*/
+echo "<hr> nastavak programa iza greske<br>";

@@ -9,4 +9,6 @@ function checkNum($number) {
 }
 
 // namjerno radimo gresku
+echo "<hr> ispred greske<br>";
 checkNum(2);
+echo "<hr> nastavak programa iza greske<br>";
