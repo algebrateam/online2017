@@ -1,6 +1,8 @@
 <?php
  include 'data.php';
- 
+ echo $data[6]['prezime']."<br>"; 
+ print_r($data);
+
  function date_trans($datum) {
  $datum_format = implode('.', array_reverse(explode('-', $datum)));
  return $datum_format;
@@ -33,7 +35,7 @@ echo'
         echo
         '<td>'
          . '<select>'
-             . '<option>Da</option>'
+             . '<option selected>Da</option>'
              . '<option>Ne</option>'
          . '<select>'
         . '</td>';
