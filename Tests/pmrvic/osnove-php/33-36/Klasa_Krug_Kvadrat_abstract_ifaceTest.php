@@ -138,8 +138,14 @@ $this->assertEquals($this->object->povrsina(),4);
     public function testBrojstranica()
     {
         // Remove the following lines when you implement this test.
+
         $this->markTestIncomplete(
             'This test has not been implemented yet.'
         );
+    }
+        public function testKojiPreskacem()
+    {
+        // Remove the following lines when you implement this test.
+        $this->markTestSkipped("ovaj test je namjerno prekocen");
     }
 }
