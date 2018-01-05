@@ -96,3 +96,15 @@ WHERE stud.pbrStan=stud.pbrRod;
 
 /*ZADATAK 3.20*/
 /* NE POSTOJI TABLICA PO KOJOJ SU POVEZANI KOLEGIJI I DVORANE*/
+
+/*ZADATAK 3.21*/
+/* NE POSTOJI TABLICA PO KOJOJ SU POVEZANI KOLEGIJI I DVORANE*/
+
+/*ZADATAK 3.22*/
+SELECT DISTINCT nastavnik.imeNastavnik, nastavnik.prezNastavnik 
+FROM nastavnik
+JOIN ispit ON ispit.sifNastavnik=nastavnik.sifNastavnik
+JOIN stud ON ispit.mbrStud=stud.mbrStud
+JOIN mjesto m1 ON m1.pbr=stud.pbrStan
+JOIN mjesto m2 ON m2.pbr=nastavnik.pbrStan
+WHERE m1.sifZupanija=m2.sifZupanija;
