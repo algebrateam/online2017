@@ -25,6 +25,11 @@ SELECT nastavnik.imeNastavnik, nastavnik.prezNastavnik, (nastavnik.koef + 0.4)*8
 SELECT nastavnik.imeNastavnik, nastavnik.prezNastavnik, (nastavnik.koef + 0.4)*800 AS placa FROM nastavnik 
 WHERE (nastavnik.koef + 0.4)*800<3500 OR (nastavnik.koef + 0.4)*800>8000;
 
+SELECT nastavnik.imeNastavnik, nastavnik.prezNastavnik, (nastavnik.koef + 0.4)*800 AS placa 
+FROM nastavnik 
+HAVING placa<3500 
+OR placa>8000;
+
 /*ZADATAK 3.7*/
 SELECT stud.imeStud, stud.prezStud FROM stud 
 JOIN ispit ON stud.mbrStud=ispit.mbrStud
