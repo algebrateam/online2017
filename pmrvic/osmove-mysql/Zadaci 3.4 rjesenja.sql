@@ -1,21 +1,26 @@
 -- 3.2
-select mbrStud, concat(imeStud,' ',prezStud) as 'Ime i prezime' from stud;
+select mbrStud, concat(imeStud,' ',prezStud, ' + ') as 'Ime i prezime' from stud;
 
 -- 3.3
-select distinct imeStud from stud order by imeStud desc;
+select distinct imeStud from stud order by imeStud ASC;
 
 -- 3.4
-select mbrStud from ispit where sifPred=146 and ocjena>1;
+select ispit.mbrStud from ispit where sifPred=146 and ocjena>1;
 
 -- 3.5
-select imeNastavnik, prezNastavnik, (koef+0.4)*800 as 'Placa' from nastavnik;
+SELECT imeNastavnik, prezNastavnik, CONCAT((koef+0.4)*800,' kn') AS 'Placa' FROM nastavnik;
 
 -- 3.6
 select imeNastavnik, prezNastavnik, (koef+0.4)*800 as 'Placa' from nastavnik
 where ((koef+0.4)*800<3500) or ((koef+0.4)*800>8000);
 
+-- 3.6 na drugi način:
+select imeNastavnik, prezNastavnik, (koef+0.4)*800 as 'Placa' from nastavnik
+HAVING Placa <3500 or Placa>8000;
+
 -- 3.7
-select imeStud, prezStud from stud join ispit on stud.mbrStud=ispit.mbrStud 
+SELECT concat(stud.imeStud,' ', stud.prezStud) AS 'Student', ispit.ocjena 
+from stud join ispit on stud.mbrStud=ispit.mbrStud 
 where (sifPred between 220 and 240) and ocjena=1;
 
 -- 3.8
@@ -64,6 +69,28 @@ join mjesto m on m.pbr=s.pbrRod
 join zupanija z on z.sifZupanija=m.sifZupanija
 join mjesto m2 on s.pbrStan=m2.pbr
 join zupanija z2 on z2.sifZupanija=m2.sifZupanija;
+
+-- 3.16 Na drugi način
+/*
+imeStud, prezStud, 
+m.nazMjesto as 'Mjesto rodenja', 
+z.nazZupanija as 'Zupanija rodenja',
+m2.nazMjesto as 'Mjesto stanovanja',
+z2.nazZupanija as 'Zupanija stanovanja'
+*/
+select 
+s.imeStud AS 'IME',
+s.prezStud AS 'Prezime',
+m.nazMjesto AS 'MjestoRod',
+z.nazZupanija AS 'ZupanijaRod',
+m2.nazMjesto AS 'MjestoStan',
+z2.nazZupanija AS 'ZupStan'
+from
+stud s
+INNER JOIN mjesto m on s.pbrRod=m.pbr
+INNER JOIN zupanija z on z.sifZupanija=m.sifZupanija
+INNER JOIN mjesto m2 on s.pbrStan=m2.pbr
+INNER JOIN zupanija z2 on z2.sifZupanija=m2.sifZupanija;
 
 -- 3.17
 select nazPred as 'Predmet', nazOrgjed as 'Organizacijska jedinica', upisanoStud as 'Upisano studenata'
@@ -137,3 +164,33 @@ join ispit on ispit.sifNastavnik=nastavnik.sifNastavnik
 join pred on pred.sifPred=ispit.sifPred
 where ispit.ocjena=2 or ispit.ocjena=3
 order by pred.nazPred asc;
+
+
+-- 3.26 Na drugi način
+SELECT
+nastavnik.imeNastavnik,
+nastavnik.prezNastavnik,
+mjesto.nazMjesto,
+zupanija.nazZupanija,
+pred.nazPred
+FROM
+nastavnik
+INNER JOIN mjesto ON nastavnik.pbrStan=mjesto.pbr
+INNER JOIN zupanija ON mjesto.sifZupanija=zupanija.sifZupanija
+INNER JOIN ispit ON nastavnik.sifNastavnik=ispit.sifNastavnik
+INNER JOIN pred ON ispit.sifPred=pred.sifPred
+WHERE ispit.ocjena BETWEEN 2 AND 3
+GROUP BY CONCAT(zupanija.sifZupanija,pred.sifPred)
+
+
+
+
+
+
+
+
+
+
+
+
+
