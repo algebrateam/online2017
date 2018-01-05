@@ -1,1 +1,0 @@
-$env:Path += ";C:\xampp\mysql\bin"
