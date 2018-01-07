@@ -30,7 +30,7 @@ $data[6]["prezime"] = "Juric";
 $data[6]["datum"]   = "2011-03-12";
 $data[6]["placeno"] = "Ne";
 
-$data[7]["ime"]     = "Antonia";
+$data[7]["ime"]     = "Antoia";
 $data[7]["prezime"] = "Antic";
 $data[7]["datum"]   = "2011-03-15";
 $data[7]["placeno"] = "Da";
