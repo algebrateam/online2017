@@ -17,5 +17,21 @@ USE data_base;
 DELETE FROM upisi 
 WHERE sifra_tecaja='P01';
 
+-- 4.4
+CREATE DATABASE IF NOT EXISTS `fakultet`;
+USE `fakultet`;
+CREATE TABLE IF NOT EXISTS `predmetidvorane` (
+  `sifPred` int(10) unsigned NOT NULL,
+  `nazPred` char(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `sifDvor` char(5) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `satnica` datetime(6) NOT NULL,
+  PRIMARY KEY (`sifPred`,`nazPred`,`sifDvor`,`satnica`),
+  KEY `FK_PredmetiDvorane_dvorana` (`sifDvor`),
+  CONSTRAINT `FK_PredmetiDvorane_dvorana` FOREIGN KEY (`sifDvor`) REFERENCES `dvorana` (`oznDvorana`),
+  CONSTRAINT `FK_PredmetiDvorane_pred` FOREIGN KEY (`sifPred`) REFERENCES `pred` (`sifPred`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
 
 
