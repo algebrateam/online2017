@@ -30,4 +30,15 @@ FOREIGN KEY(Polaznik_id) REFERENCES Polaznici(id),
 FOREIGN KEY(Tecaj_id) REFERENCES Tecajevi(id)
 ) DEFAULT CHARACTER SET utf8 ENGINE=INNODB;
 
+SELECT Ime, Prezime, Tecaj_id, Polaznik_id, Ime_tecaja
+FROM Polaznici
+JOIN Upisi ON Polaznici.id=Upisi.Polaznik_id
+JOIN Tecajevi ON Upisi.Tecaj_id=Tecajevi.id; 
 
+UPDATE Upisi SET Tecaj_id=3 WHERE Polaznik_id=2;
+
+UPDATE Tecajevi SET Ime_tecaja='SLIKANJE AKRILNIM BOJAMA'
+WHERE id=3;
+
+DELETE FROM Upisi
+WHERE Tecaj_id = 1;
