@@ -18,18 +18,38 @@ DELETE FROM upisi
 WHERE sifra_tecaja='P01';
 
 -- 4.4
-CREATE DATABASE IF NOT EXISTS `fakultet`;
-USE `fakultet`;
-CREATE TABLE IF NOT EXISTS `predmetidvorane` (
-  `sifPred` int(10) unsigned NOT NULL,
-  `nazPred` char(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `sifDvor` char(5) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `satnica` datetime(6) NOT NULL,
-  PRIMARY KEY (`sifPred`,`nazPred`,`sifDvor`,`satnica`),
-  KEY `FK_PredmetiDvorane_dvorana` (`sifDvor`),
-  CONSTRAINT `FK_PredmetiDvorane_dvorana` FOREIGN KEY (`sifDvor`) REFERENCES `dvorana` (`oznDvorana`),
-  CONSTRAINT `FK_PredmetiDvorane_pred` FOREIGN KEY (`sifPred`) REFERENCES `pred` (`sifPred`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+USE fakultet;
+CREATE TABLE predmetiDvorane (
+  sifPred INT(10) UNSIGNED NOT NULL,
+  nazPred CHAR(60) NOT NULL COLLATE 'utf8_unicode_ci',
+  sifDvor CHAR(5) NOT NULL COLLATE 'utf8_unicode_ci',
+  satnica DATETIME(6) NOT NULL,
+FOREIGN KEY (sifPred) REFERENCES pred(sifPred),  
+FOREIGN KEY (nazPred) REFERENCES pred(nazPred),
+FOREIGN KEY (sifDvor) REFERENCES dvorana(oznDvorana),
+PRIMARY KEY (nazPred,sifDvor,satnica)); 
+  
+-- 4.5
+USE fakultet;
+CREATE VIEW v_nastavnici AS
+SELECT 
+CONCAT(nastavnik.imeNastavnik,' ',nastavnik.prezNastavnik) AS 'Ime i prezime', 
+mjesto.nazMjesto
+FROM nastavnik
+INNER JOIN mjesto on nastavnik.pbrStan=mjesto.pbr;
+
+-- 4.6
+USE fakultet;
+CREATE VIEW v_studentiOcjene AS 
+SELECT 
+CONCAT(stud.imeStud,' ',stud.prezStud) AS 'Student',
+pred.nazPred,
+ispit.ocjena,
+CONCAT(nastavnik.imeNastavnik,' ',nastavnik.prezNastavnik) AS 'Profesor'
+FROM ispit
+INNER JOIN stud ON stud.mbrStud=ispit.mbrStud
+INNER JOIN nastavnik ON ispit.sifNastavnik=nastavnik.sifNastavnik
+INNER JOIN pred ON ispit.sifPred=pred.sifPred;
 
 
 
