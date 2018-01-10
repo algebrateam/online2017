@@ -8,7 +8,7 @@
  * Created: Jan 10, 2018
  */
 
-create database videoteka;
+create database Videoteka;
 
 create table Clanovi(
 id int unsigned not null auto_increment primary key,
@@ -39,7 +39,7 @@ Godina_izdavanja int not null,
 Kolicina_DVD int not null,
 Kolicina_VHS int not null,
 Sifra_zanra int unsigned not null,
-FOREIGN KEY(Sifra_zanra) REFERENCES Zanr(id)
+FOREIGN KEY(Sifra_zanra) REFERENCES Zanr(id) ON DELETE SET NULL
 )DEFAULT CHARACTER SET utf8 ENGINE=INNODB;
 
 create table Posudba(
@@ -51,8 +51,32 @@ Datum_vracanja datetime null,
 PRIMARY KEY(Clan_id, Film_id, Datum_posudbe),
 FOREIGN KEY(Clan_id) REFERENCES Clanovi(id),
 FOREIGN KEY(Film_id) REFERENCES Film(id),
-FOREIGN KEY(Sifra_cjenika) REFERENCES Cjenik(id)
+FOREIGN KEY(Sifra_cjenika) REFERENCES Cjenik(id) ON DELETE SET NULL
 )DEFAULT CHARACTER SET utf8 ENGINE=INNODB;
+
+insert into Clanovi values 
+(null,'John','Doe','Adresa 1','Telefon 1',now()),
+(null,'Jane','Fonda','Adresa 2','Telefon 2',now()),
+(null,'Steve','Smith','Adresa 3','Telefon 3',now());
+
+insert into Zanr values
+(null, 'SCI FI'),
+(null, 'Action'),
+(null, 'Triler');
+
+insert into Cjenik values
+(null, 'Novi filmovi DVD', 19.99),
+(null, 'Stari filmovi DVD', 15.99),
+(null, 'Novi filmovi VHS', 10.99),
+(null, 'Stari filmovi VHS', 7.99);
+
+insert into Film values
+(null, 'Star wars - New hope', 'George Lucas', 'Harrison Ford, Mark Hamill, Carrie Fisher', 1978, 10, 15, 1),
+(null, 'Bijeg iz alcatraza', 'Don Siegel', 'Clint Eastwood', 1979, 10, 15, 3),
+(null, 'Orlovo gnijezdo', 'Brian G. Hutton', 'Richard Burton, Clint Eastwood', 1968, 6, 10, 2);
+
+create table Posudba values
+(1, 1, 1, now(), null);
 
 select * from clanovi
 join posudba on clanovi.id=posudba.Clan_id
