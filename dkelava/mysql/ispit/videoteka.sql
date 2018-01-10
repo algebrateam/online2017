@@ -91,6 +91,7 @@ from Clanovi
 join Posudba on Clanovi.id=Posudba.Clan_id
 where Datum_vracanja is null;
 
+-- naredba vrati koliko je filmova clan posudio
 select distinct
 Clanovi.Ime,
 Clanovi.Prezime,
@@ -114,6 +115,7 @@ where Posudba.Datum_vracanja is null;
 
 -- JOS NEKE NAREDBE
 
+-- naredba koja ukljuci i ime zanra
 select
 Clanovi.Ime,
 Clanovi.Prezime,
