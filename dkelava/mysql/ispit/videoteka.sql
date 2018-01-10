@@ -35,11 +35,11 @@ id int unsigned not null auto_increment primary key,
 Ime_filma varchar(30) not null,
 Reziser varchar(60) not null,
 Glavni_glumci varchar(255) not null,
-Godina_izdavanja int not null,
+Godina_izdavanja char(4) not null,
 Kolicina_DVD int not null,
 Kolicina_VHS int not null,
 Sifra_zanra int unsigned not null,
-FOREIGN KEY(Sifra_zanra) REFERENCES Zanr(id) ON DELETE SET NULL
+FOREIGN KEY(Sifra_zanra) REFERENCES Zanr(id) ON UPDATE CASCADE
 )DEFAULT CHARACTER SET utf8 ENGINE=INNODB;
 
 create table Posudba(
@@ -48,10 +48,10 @@ Film_id int unsigned not null,
 Sifra_cjenika int unsigned not null,
 Datum_posudbe datetime not null,
 Datum_vracanja datetime null,
-PRIMARY KEY(Clan_id, Film_id, Datum_posudbe),
-FOREIGN KEY(Clan_id) REFERENCES Clanovi(id),
-FOREIGN KEY(Film_id) REFERENCES Film(id),
-FOREIGN KEY(Sifra_cjenika) REFERENCES Cjenik(id) ON DELETE SET NULL
+FOREIGN KEY(Clan_id) REFERENCES Clanovi(id) ON DELETE RESTRICT,
+FOREIGN KEY(Film_id) REFERENCES Film(id) ON DELETE RESTRICT,
+FOREIGN KEY(Sifra_cjenika) REFERENCES Cjenik(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+PRIMARY KEY(Clan_id, Film_id, Datum_posudbe)
 )DEFAULT CHARACTER SET utf8 ENGINE=INNODB;
 
 insert into Clanovi values 
@@ -71,24 +71,66 @@ insert into Cjenik values
 (null, 'Stari filmovi VHS', 7.99);
 
 insert into Film values
-(null, 'Star wars - New hope', 'George Lucas', 'Harrison Ford, Mark Hamill, Carrie Fisher', 1978, 10, 15, 1),
-(null, 'Bijeg iz alcatraza', 'Don Siegel', 'Clint Eastwood', 1979, 10, 15, 3),
-(null, 'Orlovo gnijezdo', 'Brian G. Hutton', 'Richard Burton, Clint Eastwood', 1968, 6, 10, 2);
+(null, 'Star wars - New hope', 'George Lucas', 'Harrison Ford, Mark Hamill, Carrie Fisher', '1978', 10, 15, 1),
+(null, 'Bijeg iz alcatraza', 'Don Siegel', 'Clint Eastwood', '1979', 10, 15, 3),
+(null, 'Orlovo gnijezdo', 'Brian G. Hutton', 'Richard Burton, Clint Eastwood', '1968', 6, 10, 2);
 
-create table Posudba values
-(1, 1, 1, now(), null);
+insert into Posudba values
+(1, 1, 1, now(), null),
+(2, 2, 2, now(), null),
+(3, 3, 3, now(), null);
 
-select * from clanovi
-join posudba on clanovi.id=posudba.Clan_id
-where Datum_vracanja is not null;
+-- naredba koja unese promjenu da je clan vratio neki film
+update Posudba set Datum_vracanja=now() where Clan_id=2;
+
+-- naredbe za upit o clanovima koji nisu vratili film 
+select distinct
+Clanovi.Ime,
+Clanovi.Prezime
+from Clanovi
+join Posudba on Clanovi.id=Posudba.Clan_id
+where Datum_vracanja is null;
+
+select distinct
+Clanovi.Ime,
+Clanovi.Prezime,
+count(*) as 'Posudio filmova'
+from Clanovi
+join Posudba on Clanovi.id=Posudba.Clan_id
+where Datum_vracanja is null
+group by Posudba.Film_id;
+
+-- naredba koja vraca naziv filma kojeg clan nije vratio
+select
+Clanovi.Ime,
+Clanovi.Prezime,
+Posudba.Datum_posudbe,
+Film.Ime_filma as 'Posudio film'
+from Clanovi
+join Posudba on Clanovi.id=Posudba.Clan_id
+join Film on Film.id=Posudba.Film_id
+where Posudba.Datum_vracanja is null;
+
+
+-- JOS NEKE NAREDBE
 
 select
-clanovi.Ime,
-clanovi.Prezime,
-posudba.Datum_posudbe, 
-posudba.Datum_vracanja,
-film.Ime_filma as 'Posudio film'
-from clanovi
-join posudba on clanovi.id=posudba.Clan_id
-join film on film.id=posudba.Film_id
-where Datum_vracanja is not null;
+Clanovi.Ime,
+Clanovi.Prezime,
+Posudba.Datum_posudbe,
+Film.Ime_filma as 'Posudio film',
+Zanr.Ime_zanra as Zanr
+from Clanovi
+join Posudba on Clanovi.id=posudba.Clan_id
+join Film on Film.id=Posudba.Film_id
+join Zanr on Film.Sifra_zanra=Zanr.id
+where Posudba.Datum_vracanja is null;
+
+-- provjera koliko je puta neki film trenutno posudjen
+select
+Film.Ime_filma,
+count(*) as'Ukupno posudjen'
+from Posudba
+join Film on Posudba.Film_id=Film.id
+group by Posudba.Film_id;
+
