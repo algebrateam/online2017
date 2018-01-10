@@ -98,7 +98,7 @@ count(*) as 'Posudio filmova'
 from Clanovi
 join Posudba on Clanovi.id=Posudba.Clan_id
 where Datum_vracanja is null
-group by Posudba.Film_id;
+group by Posudba.Clan_id;
 
 -- naredba koja vraca naziv filma kojeg clan nije vratio
 select
