@@ -48,7 +48,7 @@ CREATE TABLE Posudba(
 Clan_id int UNSIGNED NOT NULL,
 Film_id int UNSIGNED NOT NULL,
 Datum_posudbe DATETIME NOT NULL,
-Datum_povrata DATETIME NOT NULL,
+Datum_povrata DATETIME NULL,
 Sifra_cjenika int UNSIGNED NOT NULL,
 PRIMARY KEY(Clan_id, Film_id, Datum_posudbe), 
 FOREIGN KEY(Clan_id) REFERENCES Clanovi(id),
