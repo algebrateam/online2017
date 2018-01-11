@@ -88,18 +88,8 @@ select distinct
 Clanovi.Ime,
 Clanovi.Prezime
 from Clanovi
-join Posudba on Clanovi.id=Posudba.Clan_id
+inner join Posudba on Clanovi.id=Posudba.Clan_id
 where Datum_vracanja is null;
-
--- naredba vrati koliko je filmova clan posudio
-select distinct
-Clanovi.Ime,
-Clanovi.Prezime,
-count(*) as 'Posudio filmova'
-from Clanovi
-join Posudba on Clanovi.id=Posudba.Clan_id
-where Datum_vracanja is null
-group by Posudba.Clan_id;
 
 -- naredba koja vraca naziv filma kojeg clan nije vratio
 select
@@ -108,12 +98,22 @@ Clanovi.Prezime,
 Posudba.Datum_posudbe,
 Film.Ime_filma as 'Posudio film'
 from Clanovi
-join Posudba on Clanovi.id=Posudba.Clan_id
-join Film on Film.id=Posudba.Film_id
+inner join Posudba on Clanovi.id=Posudba.Clan_id
+inner join Film on Film.id=Posudba.Film_id
 where Posudba.Datum_vracanja is null;
 
 
 -- JOS NEKE NAREDBE
+
+-- naredba vrati koliko je filmova clan posudio
+select distinct
+Clanovi.Ime,
+Clanovi.Prezime,
+count(*) as 'Posudio filmova'
+from Clanovi
+inner join Posudba on Clanovi.id=Posudba.Clan_id
+where Datum_vracanja is null
+group by Posudba.Clan_id;
 
 -- naredba koja ukljuci i ime zanra
 select
@@ -123,9 +123,9 @@ Posudba.Datum_posudbe,
 Film.Ime_filma as 'Posudio film',
 Zanr.Ime_zanra as Zanr
 from Clanovi
-join Posudba on Clanovi.id=posudba.Clan_id
-join Film on Film.id=Posudba.Film_id
-join Zanr on Film.Sifra_zanra=Zanr.id
+inner join Posudba on Clanovi.id=posudba.Clan_id
+inner join Film on Film.id=Posudba.Film_id
+inner join Zanr on Film.Sifra_zanra=Zanr.id
 where Posudba.Datum_vracanja is null;
 
 -- provjera koliko je puta neki film trenutno posudjen
@@ -133,6 +133,6 @@ select
 Film.Ime_filma,
 count(*) as'Ukupno posudjen'
 from Posudba
-join Film on Posudba.Film_id=Film.id
+inner join Film on Posudba.Film_id=Film.id
 group by Posudba.Film_id;
 
