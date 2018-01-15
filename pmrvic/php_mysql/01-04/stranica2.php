@@ -2,6 +2,7 @@
 session_start();
 $_SESSION['var1']=1234;
 $_SESSION['var2']="Neki moj text";
+
 ?>
 
 <!DOCTYPE html>
@@ -18,8 +19,9 @@ if(isset($_SESSION['brojevi'])){
 foreach ($_SESSION['brojevi'] as $value) {
  	echo "-".$value;
  } 
+ array_push($_SESSION['brojevi'], rand(10,100));
 }
-array_push($_SESSION['brojevi'], rand(10,100));
+
 ?>
 <br>
 
