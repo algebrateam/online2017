@@ -1,0 +1,135 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="686px" height="403px" version="1.1" content="&lt;mxfile type=&quot;device&quot; userAgent=&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36&quot; version=&quot;6.5.5&quot; editor=&quot;www.draw.io&quot;&gt;&lt;diagram name=&quot;Page-1&quot;&gt;7Vldb6M4FP01eZyIj0DoY5M0nZV2pZU60jyODDjEqsGscabp/vq1jQ0YmybTYds+lEgRXBt/nHPv8bVZhNvyfE9BffyL5BAvAi8/L8LdIgiSdcD/heG5NYTJqjUUFOWtye8ND+hfqIyesp5QDhujIiMEM1SbxoxUFcyYYQOUkiez2oFgs9caFKpHrzc8ZABDq9p3lLOjmlYQ9/avEBVH3bMf37QlKcgeC0pOlepvEYQHebXFJdBtqX6bI8jJ08AU3i3CLSWEtXfleQuxgFbDpt9jz3qsi3BzZCXmDz6/lcX7iZf9a17ms6OwYsPuptpTLP8E+KTbG3fwE1KGOLB/ghTiv0mDGCIVL0oJY6TkfeoKtxgVooCRmlsbRsljh70YG0eqFm2W50K43BKRZn1Cy/pIKm7eHBDGW4IJld1q0HVDg5LME79L81ZIicHB88CkcLiHpISMPvMqqlQT82w+PvXeE3jKdhx4zkobgfLYomu5x53fKOjdNISfNHQ0xO/IQ/S+PCzRpnhgFNUwdyHuJ1ynUpujaLeOksh8I2iL4mh9l+xnJykMlpHBUmKz5K8jm6Wu4u+wFH+ydF0ord+VpvWnqGkmIm/MxJvK2s37M4F4oncvU8cxGR3kg0SSr4fbcHYWVv4yMFm4ccRDtF66IiKegQedHA+I+IPjYpHxS6gKREnFFHKJenR5e3riXFbf4FnOaW50k/G6HVjYrhwOHsYz4OpbuO7IU4UJyFFViMbrGnPnlT79arBz1eQG0Ol4qEHGu/wmHnZfVhe52cvLwU0KKI9CEQqeHTJAXi798rzEO/wPSVlixk3okC8/crE7R9R8hE0K3y9uOXWUYJuOQF4uOjqiZk6/VmashatOswaEuPiIZqDDtVmJMe9gU/Obgsk5tgYBiAzAnqr4n5PYGstA+NLIwLjlFXwxpah9VdXQjX0HiOkG+eB0m2ZPKV0In9xfazdbuU0J5X14WjUuvT05DF4wAOG1SgMy4b47BDApeK0SoIEyNKfUKeEjZRFKsHdphyd+s2SX63FOEzlUIXYsprOspatJN2Qg5ZBf43SwlDx5WYvPrWRbQyRL1FRkba9z0W42I3vvul7Gh6tWA2MInlWrBnn+Yi3TxVhK8mfLSC1LLgBWate3lnHCITXG0LOljUImInsEQgC5azYDZxe9WBHgGMxbDO8hO8L8JJifaXi2/5h+0um+Md55J/UVVAU5sY8KOWSMu+5H9Yi7M3oFcsLoijFhb5XlKn0PJvR9WaImW9Yoe4TUmTNo9RloO+GyfMDymFnIuZlW+tE8WUXkv+6wwJ9Fzt/q6O1lWhqI5deI8arZ5dUWXd3uat4UL16bKZ4frWw2AgcZwQxcvNUB28tcZGq5+ZECZ6BMZTjQE7/ZGRmHRxjaG9yJw7SlZ1yrGSj6AIdrDUa5lLBurxo4I6SLnStO4YJpDZyDwmCcsoaevW9ybmT9OXZOyWXSBhO+yB8WBZvue6UL2quj8Nrg6knT3z1FpRw0R3EaLh+cES1OqpolwICWPzJMsseOUYs+B8mTjPqjr3a+by9a+iD6N88l+GP/VVeWDb6ch3f/AQ==&lt;/diagram&gt;&lt;/mxfile&gt;" style="background-color: rgb(255, 255, 255);">
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="mx-gradient-00d0f0-1-0080f0-1-s-0">
+            <stop offset="0%" style="stop-color:#00D0F0"/>
+            <stop offset="100%" style="stop-color:#0080F0"/>
+        </linearGradient>
+    </defs>
+    <g transform="translate(0.5,0.5)">
+        <rect x="1" y="1" width="200" height="400" rx="25" ry="25" fill="#ffffff" stroke="#c0c0c0" pointer-events="none"/>
+        <rect x="13.5" y="61" width="175" height="280" fill="none" stroke="#c0c0c0" pointer-events="none"/>
+        <ellipse cx="101" cy="20" rx="2.5" ry="2.5" fill="none" stroke="#c0c0c0" pointer-events="none"/>
+        <rect x="76" y="31" width="50" height="7.5" rx="4" ry="4" fill="none" stroke="#c0c0c0" pointer-events="none"/>
+        <ellipse cx="101" cy="371" rx="20" ry="20" fill="none" stroke="#c0c0c0" pointer-events="none"/>
+        <rect x="92.5" y="363" width="17" height="17.5" rx="2.5" ry="2.5" fill="none" stroke="#c0c0c0" pointer-events="none"/>
+        <rect x="241" y="1" width="200" height="400" rx="25" ry="25" fill="#ffffff" stroke="#c0c0c0" pointer-events="none"/>
+        <rect x="253.5" y="61" width="175" height="280" fill="none" stroke="#c0c0c0" pointer-events="none"/>
+        <ellipse cx="341" cy="20" rx="2.5" ry="2.5" fill="none" stroke="#c0c0c0" pointer-events="none"/>
+        <rect x="316" y="31" width="50" height="7.5" rx="4" ry="4" fill="none" stroke="#c0c0c0" pointer-events="none"/>
+        <ellipse cx="341" cy="371" rx="20" ry="20" fill="none" stroke="#c0c0c0" pointer-events="none"/>
+        <rect x="332.5" y="363" width="17" height="17.5" rx="2.5" ry="2.5" fill="none" stroke="#c0c0c0" pointer-events="none"/>
+        <rect x="13.5" y="61" width="175" height="280" fill="#5d7585" stroke="#18211b" pointer-events="none"/>
+        <path d="M 18.5 61 L 18.5 341 M 23.5 61 L 23.5 341 M 28.5 61 L 28.5 341 M 33.5 61 L 33.5 341 M 38.5 61 L 38.5 341 M 43.5 61 L 43.5 341 M 48.5 61 L 48.5 341 M 53.5 61 L 53.5 341 M 58.5 61 L 58.5 341 M 63.5 61 L 63.5 341 M 68.5 61 L 68.5 341 M 73.5 61 L 73.5 341 M 78.5 61 L 78.5 341 M 83.5 61 L 83.5 341 M 88.5 61 L 88.5 341 M 93.5 61 L 93.5 341 M 98.5 61 L 98.5 341 M 103.5 61 L 103.5 341 M 108.5 61 L 108.5 341 M 113.5 61 L 113.5 341 M 118.5 61 L 118.5 341 M 123.5 61 L 123.5 341 M 128.5 61 L 128.5 341 M 133.5 61 L 133.5 341 M 138.5 61 L 138.5 341 M 143.5 61 L 143.5 341 M 148.5 61 L 148.5 341 M 153.5 61 L 153.5 341 M 158.5 61 L 158.5 341 M 163.5 61 L 163.5 341 M 168.5 61 L 168.5 341 M 173.5 61 L 173.5 341 M 178.5 61 L 178.5 341 M 183.5 61 L 183.5 341" fill="none" stroke="#657e8f" stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="13.5" y="61" width="175" height="280" fill="none" stroke="#18211b" pointer-events="none"/>
+        <rect x="253.5" y="61" width="175" height="280" fill="#5d7585" stroke="#18211b" pointer-events="none"/>
+        <path d="M 258.5 61 L 258.5 341 M 263.5 61 L 263.5 341 M 268.5 61 L 268.5 341 M 273.5 61 L 273.5 341 M 278.5 61 L 278.5 341 M 283.5 61 L 283.5 341 M 288.5 61 L 288.5 341 M 293.5 61 L 293.5 341 M 298.5 61 L 298.5 341 M 303.5 61 L 303.5 341 M 308.5 61 L 308.5 341 M 313.5 61 L 313.5 341 M 318.5 61 L 318.5 341 M 323.5 61 L 323.5 341 M 328.5 61 L 328.5 341 M 333.5 61 L 333.5 341 M 338.5 61 L 338.5 341 M 343.5 61 L 343.5 341 M 348.5 61 L 348.5 341 M 353.5 61 L 353.5 341 M 358.5 61 L 358.5 341 M 363.5 61 L 363.5 341 M 368.5 61 L 368.5 341 M 373.5 61 L 373.5 341 M 378.5 61 L 378.5 341 M 383.5 61 L 383.5 341 M 388.5 61 L 388.5 341 M 393.5 61 L 393.5 341 M 398.5 61 L 398.5 341 M 403.5 61 L 403.5 341 M 408.5 61 L 408.5 341 M 413.5 61 L 413.5 341 M 418.5 61 L 418.5 341 M 423.5 61 L 423.5 341" fill="none" stroke="#657e8f" stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="253.5" y="61" width="175" height="280" fill="none" stroke="#18211b" pointer-events="none"/>
+        <rect x="483.5" y="1" width="200" height="400" rx="25" ry="25" fill="#ffffff" stroke="#c0c0c0" pointer-events="none"/>
+        <rect x="496" y="61" width="175" height="280" fill="none" stroke="#c0c0c0" pointer-events="none"/>
+        <ellipse cx="584" cy="20" rx="2.5" ry="2.5" fill="none" stroke="#c0c0c0" pointer-events="none"/>
+        <rect x="558.5" y="31" width="50" height="7.5" rx="4" ry="4" fill="none" stroke="#c0c0c0" pointer-events="none"/>
+        <ellipse cx="584" cy="371" rx="20" ry="20" fill="none" stroke="#c0c0c0" pointer-events="none"/>
+        <rect x="575" y="363" width="17" height="17.5" rx="2.5" ry="2.5" fill="none" stroke="#c0c0c0" pointer-events="none"/>
+        <rect x="22.25" y="71" width="49.22" height="81.25" fill="#c0c0c0" stroke="none" pointer-events="none"/>
+        <rect x="22.25" y="160.38" width="49.22" height="81.25" fill="#c0c0c0" stroke="none" pointer-events="none"/>
+        <rect x="22.25" y="249.75" width="49.22" height="81.25" fill="#c0c0c0" stroke="none" pointer-events="none"/>
+        <rect x="76.39" y="71" width="49.22" height="81.25" fill="#c0c0c0" stroke="none" pointer-events="none"/>
+        <rect x="76.39" y="160.38" width="49.22" height="81.25" fill="#c0c0c0" stroke="none" pointer-events="none"/>
+        <rect x="76.39" y="249.75" width="49.22" height="81.25" fill="#c0c0c0" stroke="none" pointer-events="none"/>
+        <rect x="130.53" y="71" width="49.22" height="81.25" fill="#c0c0c0" stroke="none" pointer-events="none"/>
+        <rect x="130.53" y="160.38" width="49.22" height="81.25" fill="#c0c0c0" stroke="none" pointer-events="none"/>
+        <rect x="130.53" y="249.75" width="49.22" height="81.25" fill="#c0c0c0" stroke="none" pointer-events="none"/>
+        <rect x="61" y="183" width="40" height="36" rx="4" ry="3.6" fill="url(#mx-gradient-00d0f0-1-0080f0-1-s-0)" stroke="none" pointer-events="none"/>
+        <g fill="#ffffff" font-family="Arial,Helvetica" font-weight="bold" text-anchor="middle" font-size="8px"/>
+        <g transform="translate(73.5,197.5)">
+            <switch>
+                <foreignObject style="overflow:visible;" pointer-events="all" width="14" height="7" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 8px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; vertical-align: top; white-space: nowrap; text-align: center;">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">Icon</div>
+                    </div>
+                </foreignObject>
+                <text x="7" y="8" fill="#ffffff" text-anchor="middle" font-size="8px" font-family="Helvetica">Icon</text>
+            </switch>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" font-weight="bold" text-anchor="middle" font-size="11px"/>
+        <path d="M 266 316 L 416 316" fill="none" stroke="#aaaaaa" stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 266 316 L 311 316" fill="none" stroke="#0080f0" stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+        <g transform="translate(299.5,304.5)">
+            <switch>
+                <foreignObject style="overflow:visible;" pointer-events="all" width="82" height="7" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 8px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; vertical-align: top; white-space: nowrap; text-align: center;">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">Downloading application</div>
+                    </div>
+                </foreignObject>
+                <text x="41" y="8" fill="#FFFFFF" text-anchor="middle" font-size="8px" font-family="Helvetica">Downloading application</text>
+            </switch>
+        </g>
+        <ellipse cx="324" cy="331" rx="2.5" ry="2.5" fill="#aaaaaa" stroke="none" pointer-events="none"/>
+        <ellipse cx="335" cy="331" rx="2.5" ry="2.5" fill="#aaaaaa" stroke="none" pointer-events="none"/>
+        <ellipse cx="346" cy="331" rx="2.5" ry="2.5" fill="#aaaaaa" stroke="none" pointer-events="none"/>
+        <ellipse cx="357" cy="331" rx="2.5" ry="2.5" fill="#aaaaaa" stroke="none" pointer-events="none"/>
+        <ellipse cx="369" cy="331" rx="2.5" ry="2.5" fill="#222222" stroke="none" pointer-events="none"/>
+        <rect x="258.5" y="231" width="165" height="60" fill="#a0a0a0" stroke="none" pointer-events="none"/>
+        <rect x="266.75" y="237" width="148.5" height="21" rx="4.13" ry="3" fill="#e0e0e0" stroke="none" pointer-events="none"/>
+        <rect x="266.75" y="264" width="148.5" height="21" rx="4.13" ry="3" fill="#e0e0e0" stroke="none" pointer-events="none"/>
+        <g fill="#666666" font-family="Arial,Helvetica" font-weight="bold" text-anchor="middle" font-size="17px"/>
+        <g fill="#666666" font-family="Arial,Helvetica" font-weight="bold" text-anchor="middle" font-size="12.142857142857144px"/>
+        <g transform="translate(295.5,225.5)">
+            <switch>
+                <foreignObject style="overflow:visible;" pointer-events="all" width="91" height="70" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 128, 240); line-height: 1.2; vertical-align: top; white-space: nowrap; text-align: center;">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+                            <p>
+                                <strong style="font-size: 140%">Wait</strong>
+                                <br />
+                                <br />
+                                <strong>Abort Download<br /></strong>
+                            </p>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="46" y="41" fill="#0080F0" text-anchor="middle" font-size="12px" font-family="Helvetica">[Not supported by viewer]</text>
+            </switch>
+        </g>
+        <path d="M 496 126.35 L 671 126.35 M 496 157.9 L 671 157.9" fill="none" stroke="#a0a0a0" stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+        <g transform="translate(496.5,61.5)">
+            <switch>
+                <foreignObject style="overflow:visible;" pointer-events="all" width="172" height="157" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 173px; height: 158px; overflow: hidden; white-space: nowrap; text-align: center;">
+                        <table style="font-size: 1em ; color: #a0a0a0 ; width: 100% ; height: 100%" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td align="center" width="25%">Contacts</td>
+                                </tr>
+                                <tr>
+                                    <td align="center" width="25%">Schedule</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #222222" align="center" width="25%">Hangout</td>
+                                </tr>
+                                <tr>
+                                    <td align="center" width="25%">Settings</td>
+                                </tr>
+                                <tr>
+                                    <td align="center" width="25%">Exit</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </foreignObject>
+                <text x="86" y="86" fill="#000000" text-anchor="middle" font-size="15px" font-family="Helvetica">[Not supported by viewer]</text>
+            </switch>
+        </g>
+        <ellipse cx="657" cy="141" rx="6" ry="6" fill="#0080f0" stroke="none" pointer-events="none"/>
+        <path d="M 653.4 141.6 L 654.6 143.4 L 661.2 138" fill="none" stroke="#ffffff" stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="496" y="313" width="175" height="28" fill="#e0e0e0" stroke="none" pointer-events="none"/>
+        <path d="M 519.13 317.97 L 507.06 327.31 L 519.13 336.64 M 543.27 317.97 L 555.67 327.31 L 543.27 336.64 M 585.11 321.21 L 591.21 321.21 L 591.21 336.33 L 574.12 336.33 L 574.12 321.21 L 580.22 321.21 M 577.78 320.73 L 582.67 317.97 L 587.54 320.73 M 582.67 317.97 L 582.67 330.94 M 607.47 335.4 C 607.05 335.06 606.66 334.7 606.3 334.31 L 606.3 319.07 C 606.65 318.67 607.04 318.3 607.47 317.97 L 616.86 317.97 C 617.32 318.27 617.72 318.64 618.03 319.07 C 618.33 318.63 618.73 318.26 619.2 317.97 L 628.59 317.97 C 628.9 317.97 629.2 318.09 629.42 318.29 C 629.64 318.5 629.76 318.78 629.76 319.07 L 629.76 334.31 C 629.42 334.71 629.02 335.08 628.59 335.4 Z M 618.03 319.07 L 618.03 336.49 M 641.5 317.97 L 662.92 317.97 L 662.92 320.19 L 665.3 320.19 L 665.3 334.54 L 643.88 334.54 L 643.88 332.34 L 641.5 332.34 Z M 643.88 332.34 L 643.88 320.19 L 662.92 320.19" fill="none" stroke="#0080f0" stroke-width="1.87" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 508.5 293.5 L 658.5 293.5" fill="#ffffff" stroke="#bbbbbb" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 508.5 293.5 L 538.5 293.5" fill="#ffffff" stroke="#0080f0" stroke-miterlimit="10" pointer-events="none"/>
+        <ellipse cx="539" cy="294" rx="5" ry="5" fill="#ffffff" stroke="#bbbbbb" pointer-events="none"/>
+        <ellipse cx="115" cy="108" rx="13.5" ry="13.357079252003562" fill="#ffffff" stroke="#0080f0" stroke-width="2" pointer-events="none"/>
+        <path d="M 114.5 97.25 L 114.5 107.64 L 108.5 107.64" fill="none" stroke="#0080f0" stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 101 121 L 104.9 117.14 M 128 121 L 124.1 117.14 M 111.5 92.8 L 102.5 97.25 C 102.3 95.06 103.47 92.97 105.46 91.98 C 107.45 91 109.85 91.32 111.5 92.8 Z M 117.5 92.8 L 126.5 97.25 C 126.7 95.06 125.53 92.97 123.54 91.98 C 121.55 91 119.15 91.32 117.5 92.8 Z" fill="#ffffff" stroke="#0080f0" stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+    </g>
+</svg>
