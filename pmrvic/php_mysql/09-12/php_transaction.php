@@ -28,9 +28,16 @@ $result=$mysqli->query($query);
 if(!$result) $error_num++;
 
 
-$query ="SAVEPOINT SAVE1";
+//$query ="SAVEPOINT SAVE1";
+
+$query = "INSERT INTO mjesto1 (pbr,nazMjesto, sifZupanija)
+VALUES (22222,'Zzzzzz',789);";
 
 $result=$mysqli->query($query);
+
+if(!$result) $error_num++;
+
+//$result=$mysqli->query($query);
 
 // Pokušamo napraviti grešku unijevši u nepostojeći stupac pbr1
 $query = <<<EOD
@@ -48,7 +55,7 @@ echo "<br> broj gresaka: ".$error_num;
 /*
 ($error_num<1)? $query="COMMIT": $query="ROLLBACK TO SAVE1";
 */
-//$query ="COMMIT";
+$query ="COMMIT";
 
 
 $result=$mysqli->query($query);
