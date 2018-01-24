@@ -48,7 +48,7 @@ EOD;
 
 $result=$mysqli->query($query);
 	
-if(!	$result) $error_num++;
+if(!$result) $error_num++;
 
 echo "<br> broj gresaka: ".$error_num;
 
