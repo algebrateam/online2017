@@ -63,11 +63,10 @@ echo "<br> broj gresaka: ".$error_num;
 
 
 ($error_num<1)? $query="COMMIT": $query="ROLLBACK TO SAVE1";
-<<<<<<< HEAD
-*/
+
+
 $query ="COMMIT";
-=======
->>>>>>> 0842ca920312dac0087853fe22a6b7345a0497f7
+
 
 $result=$mysqli->query($query);
 
