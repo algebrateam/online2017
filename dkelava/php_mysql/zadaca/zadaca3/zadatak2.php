@@ -6,17 +6,7 @@
  * and open the template in the editor.
  */
 
-$host = "localhost";
-$user = "root";
-$password = "";
-$database = "fakultet";
-$mysqli = new mysqli($host, $user, $password, $database);
-
-if (mysqli_connect_errno()) {
-    echo "ERROR";
-    echo mysqli_connect_error();
-    exit;
-}
+require "db_connection.php";
 
 $q = "SELECT nazPred FROM pred ORDER BY nazPred ASC";
 $result = $mysqli->query($q);

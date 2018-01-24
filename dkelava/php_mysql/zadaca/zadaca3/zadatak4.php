@@ -5,14 +5,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 require "db_connection.php";
 
-$q = "SELECT * FROM stud WHERE imeStud='Ivan'";
+$q = "SELECT *, mjesto.nazMjesto FROM stud INNER JOIN mjesto ON mjesto.pbr=stud.pbrRod WHERE stud.pbrRod = 10000";
 $result = $mysqli->query($q);
 
 if($result){
     while($row = $result->fetch_assoc()){
-        echo "Maticni broj studenta: " . $row['mbrStud'] . "| Prezime studenta: " . $row['prezStud'] . "<br/>";
+        echo $row['imeStud'] . " " . $row['prezStud'] . "<br/>";
     }
 }
-
