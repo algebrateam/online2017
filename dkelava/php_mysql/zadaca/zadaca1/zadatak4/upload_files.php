@@ -15,7 +15,7 @@ $upload_forma .= "</form>";
 echo $upload_forma;
 
 if (isset($_POST['upload'])) {
-    print_r($_POST['upload']);
+    print_r($_FILES);
     echo "<br/>";
     foreach ($_FILES['file']['name'] as $key => $value) {
     echo $_FILES['file']['name'][$key];
