@@ -8,7 +8,9 @@
 
 require "db_connection.php";
 
-$q = "SELECT *, mjesto.nazMjesto FROM stud INNER JOIN mjesto ON mjesto.pbr=stud.pbrRod WHERE stud.pbrRod = 10000";
+$q = "SELECT *, mjesto.nazMjesto FROM stud ";
+$q .= "INNER JOIN mjesto ON mjesto.pbr=stud.pbrRod ";
+$q .= "WHERE stud.pbrRod = 10000";
 $result = $mysqli->query($q);
 
 if($result){
@@ -16,3 +18,5 @@ if($result){
         echo $row['imeStud'] . " " . $row['prezStud'] . "<br/>";
     }
 }
+
+$mysqli->close();

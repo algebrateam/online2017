@@ -8,11 +8,20 @@
 
 require "db_connection.php";
 
-$q = "SELECT nazPred FROM pred ORDER BY nazPred ASC";
-$result = $mysqli->query($q);
+$q = "SELECT nazPred FROM pred ";
+$q .= "ORDER BY nazPred ASC";
 
-if($result){
-    while($row = $result->fetch_assoc()){
-        echo "Ime Predmeta: " . $row['nazPred'] . "<br/>";
+if($stmt = $mysqli->prepare($q)){
+    
+    $stmt->execute();
+
+    $stmt->bind_result($col);
+
+    while ($stmt->fetch()){
+        echo $col . "<br/>";
     }
+    
+    $stmt->close();
 }
+
+$mysqli->close();

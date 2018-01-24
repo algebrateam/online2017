@@ -16,3 +16,5 @@ if($result){
         echo $row['imeStud'] . " " . $row['prezStud'] . "<br/>";
     }
 }
+
+$mysqli->close();

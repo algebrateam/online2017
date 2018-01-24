@@ -8,7 +8,8 @@
 
 require "db_connection.php";
 
-$q = "SELECT * FROM stud WHERE imeStud LIKE 'A%'";
+$q = "SELECT * FROM stud ";
+$q .= "WHERE imeStud LIKE 'A%'";
 $result = $mysqli->query($q);
 
 $row_count = $result->num_rows;

@@ -8,11 +8,20 @@
 
 require "db_connection.php";
 
-$q = "SELECT COUNT(*) AS 'Broj nastavnika' FROM nastavnik WHERE imeNastavnik LIKE 'M%'";
-$result = $mysqli->query($q);
+$q = "SELECT COUNT(*) AS 'Broj' FROM nastavnik ";
+$q .= "WHERE imeNastavnik LIKE 'M%'";
 
-if($result){
-    while($row = $result->fetch_assoc()){
-        echo $row['Broj nastavnika'] . "<br/>";
+if($stmt = $mysqli->prepare($q)){
+    
+    $stmt->execute();
+
+    $stmt->bind_result($col);
+
+    while ($stmt->fetch()){
+        echo $col;
     }
+    
+    $stmt->close();
 }
+
+$mysqli->close();
