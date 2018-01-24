@@ -28,7 +28,7 @@ if(isset($_POST['submit'])){
 echo "<h4>ZADATAK 2</h4>";
 
 $forma2 = "";
-$forma2 .= "<form method='post' action='forma2.php'>";
+$forma2 .= "<form method='get' action='forma2.php'>";
 $forma2 .= "<input type='number' name='broj_polja'>";
 $forma2 .= "<input type='submit' value='Push'>";
 $forma2 .= "</form>";
