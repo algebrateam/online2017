@@ -114,7 +114,7 @@ D-elete
                         </tr>                         
                        <tr>
                             <td><label for="datRodStud">Datum rođenja:</label></td>
-                            <td><input type="datetime" name="datRodStud"  value="<?= $datRodStud?>"></td> 
+                            <td><input type="date" name="datRodStud"  value="<?= $datRodStud?>"></td> 
                         </tr> 
                      <tr>
                             <td><label for="jmbgStud">JMBG:</label></td>
