@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+UPIS NA POČETAK %%%%%%%%%%
+aa
+aaaaaaaaaaaaaa
+aaaaaaaaaaaaaa
+aaaaaaaaaaaaaa
+=======
 File handler
 File handler
 upis izmedju 2 i 3 linije XXXXXXXndler
@@ -5,3 +12,4 @@ File handler
 
 
 
+>>>>>>> a40ce0f6d3284bdfc7f93bc15da3b254c5439d65

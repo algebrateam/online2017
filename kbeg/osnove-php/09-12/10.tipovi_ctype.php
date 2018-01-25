@@ -8,7 +8,20 @@ Objasniti razliku. Definirati par varijabli i konstanti za
 vježbu
 
 */
+$nekibroj=66;
 
+echo "cjelobrojni: ".$nekibroj;
+$floatNekibroj= floatval($nekibroj);
+
+$floatExplicit= (float)$nekibroj;
+
+$implicitFloat=$nekibroj*1.0;
+
+echo "<br>decimalni: ".$floatNekibroj."<br>";
+
+var_dump($implicitFloat);
+
+echo "<br><hr>";
 
 //echo "Prova  ctype_alnum()";
 
