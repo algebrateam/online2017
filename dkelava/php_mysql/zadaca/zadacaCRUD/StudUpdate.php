@@ -2,25 +2,23 @@
 require_once 'dbconnect.php';
 
 if(isset($_POST['uredi'])){
+    $mbrStud = $_GET['mbrStud'];
     $updated_at=(new DateTime())->format('Y-m-d H:i:s');
     $stmt=$conn->prepare("UPDATE `fakultet`.`stud` SET "
-            . "  `imeStud`=?"
-            . ", `prezStud`=?"
-            . ", `pbrRod`=?"
-            . ", `pbrStan`=?"
-            . ", `datRodStud`=?"
-            . ", `jmbgStud`=?"            
-            . ", `updated_at`=?  "
-            . "WHERE  `mbrStud`=?");
-$stmt->bind_param("ssiisssi"
+            . "  `imeStud`=? "
+            . ", `prezStud`=? "
+            . ", `pbrRod`=? "
+            . ", `pbrStan`=? "
+            . ", `datRodStud`=? "
+            . ", `jmbgStud`=?, `updated_at`=? WHERE  `mbrStud`=?");
+$stmt->bind_param("ssiisisi"
         ,$_POST['imeStud']
         ,$_POST['prezStud']
         ,$_POST['pbrRod']
         ,$_POST['pbrStan']
         ,$_POST['datRodStud']
         ,$_POST['jmbgStud']
-        ,$updated_at
-        ,$_POST['mbrStud']);
+        ,$updated_at, $mbrStud);
 
 if ( false===$stmt ) {
   die ('prepare() failed: ' . $mysqli->error);
@@ -39,10 +37,11 @@ if (strlen($_POST['prezStud'])<3){
 
 if($validate==TRUE){
 if($stmt->execute()){
-    echo "Uspješno smo uredili studenta<br>";
+    echo "UspjeÅ¡no smo uredili studenta<br>";
+    var_dump( $stmt);
 }
 else{
-    echo "Dogodila se greška kod ureðivanja<br>";
+    echo "Dogodila se greÅ¡ka kod ureÄ‘ivanja<br>";
     echo "<span style='color:red'>".$stmt->error."</span><hr>";
 }
 }
@@ -114,7 +113,7 @@ D-elete
                     </select></td> 
                         </tr>                         
                        <tr>
-                            <td><label for="datRodStud">Datum roðenja:</label></td>
+                            <td><label for="datRodStud">Datum roÄ‘enja:</label></td>
                             <td><input type="date" name="datRodStud"  value="<?= $datRodStud?>"></td> 
                         </tr> 
                      <tr>
@@ -135,19 +134,16 @@ D-elete
                 <?php  while($stud=$result->fetch_assoc()){ 
                     
                  echo  "<li>"
-                    .$stud['mbrStud']
-                         ." ,"
                     .$stud['imeStud']
                          ." ,"
                          .$stud['datRodStud']
-                         ." prebivalište:"
+                         ." prebivaliÅ¡te:"
                          .$stud['pbrRod']
                          ." studira u:"
                          .$stud['pbrStan']
                          ." JMBG:"
                          .$stud['jmbgStud']
-                   ." <a href='?mbrStud=".$stud['mbrStud']."'>edit</a>"      
-                   ."</li>";  
+                         ."</li>";  
                 }  ?>
             </ul>
             

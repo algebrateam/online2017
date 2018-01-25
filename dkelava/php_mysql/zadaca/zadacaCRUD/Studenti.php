@@ -1,31 +1,17 @@
 <?php
 require_once 'dbconnect.php';
 
-if(isset($_POST['uredi'])){
-    $updated_at=(new DateTime())->format('Y-m-d H:i:s');
-    $stmt=$conn->prepare("UPDATE `fakultet`.`stud` SET "
-            . "  `imeStud`=?"
-            . ", `prezStud`=?"
-            . ", `pbrRod`=?"
-            . ", `pbrStan`=?"
-            . ", `datRodStud`=?"
-            . ", `jmbgStud`=?"            
-            . ", `updated_at`=?  "
-            . "WHERE  `mbrStud`=?");
-$stmt->bind_param("ssiisssi"
+if(isset($_POST['unesi'])){
+    $created_at=(new DateTime())->format('Y-m-d H:i:s');
+    $stmt=$conn->prepare("INSERT INTO `fakultet`.`stud` (`imeStud`, `prezStud`, `pbrRod`, `pbrStan`, `datRodStud`, `jmbgStud`, `created_at`) VALUES (?,?,?,?,?,?,?)");
+$stmt->bind_param("ssiisss"
         ,$_POST['imeStud']
         ,$_POST['prezStud']
         ,$_POST['pbrRod']
         ,$_POST['pbrStan']
         ,$_POST['datRodStud']
         ,$_POST['jmbgStud']
-        ,$updated_at
-        ,$_POST['mbrStud']);
-
-if ( false===$stmt ) {
-  die ('prepare() failed: ' . $mysqli->error);
-}
-
+        ,$created_at);
 $validate=TRUE;
 
 if (strlen($_POST['imeStud'])<3){
@@ -39,10 +25,10 @@ if (strlen($_POST['prezStud'])<3){
 
 if($validate==TRUE){
 if($stmt->execute()){
-    echo "Uspješno smo uredili studenta<br>";
+    echo "UspjeÅ¡no dodan student";
 }
 else{
-    echo "Dogodila se greška kod ureðivanja<br>";
+    echo "Dogodila se greÅ¡ko kod inserta<br>";
     echo "<span style='color:red'>".$stmt->error."</span><hr>";
 }
 }
@@ -51,19 +37,6 @@ else{
 
 $query="SELECT * FROM stud ORDER BY mbrStud DESC LIMIT 10";
 $result=$conn->query($query);
-
-if(isset($_GET['mbrStud'])){
-  $query="SELECT * FROM stud WHERE mbrStud ";
-$result1=$conn->query($query);  
-$stmt= $stmt=$conn->prepare("SELECT imeStud,prezStud,pbrRod,pbrStan,datRodStud,jmbgStud FROM stud WHERE mbrStud =?");
-$stmt->bind_param("i",$_GET['mbrStud']);
-$stmt->execute();
-$stmt->bind_result($imeStud,$prezStud,$pbrRod,$pbrStan,$datRodStud,$jmbgStud);
-$stmt->fetch();
-
-}
-
-
 ?>
 <!DOCTYPE html>
 <!-- 
@@ -81,47 +54,45 @@ D-elete
     <body>
         <div>
             <form action="" method="post">
-                <input type="hidden" name="mbrStud" value="<?php echo $_GET['mbrStud'];?>">
                 <table cellpadding="0">
                     <thead>
                         <tr>
-                            <th colspan="2"> Uredi studenta</th>
+                            <th colspan="2"> Dodaj novog studenta</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><label for="imeStud">Ime studenta:</label></td>
-                            <td><input type="text" name="imeStud" required="TRUE"  pattern=".{3,}" title="Ime studenta mora biti minimalno 3 znaka" value="<?= $imeStud?>"></td> 
+                            <td><input type="text" name="imeStud" required="TRUE"  pattern=".{3,}" title="Ime studenta mora biti minimalno 3 znaka"></td> 
                         </tr>
                                                 <tr>
                             <td><label for="prezStud">Prezime studenta:</label></td>
-                            <td><input type="text" name="prezStud" required="TRUE"  pattern=".{3,}" title="Prezime studenta mora biti minimalno 3 znaka" value="<?= $prezStud?>"></td> 
+                            <td><input type="text" name="prezStud" required="TRUE"  pattern=".{3,}" title="Prezime studenta mora biti minimalno 3 znaka"></td> 
                         </tr>
                         </tr>
                                    <tr>
                             <td><label for="pbrRod">Adresa prebivaliÅ¡ta:</label></td>
                             <td><select name="pbrRod">
-                                    <option value="<?= $pbrRod?>"><?= $pbrRod?></option>
+                                    <option value="10000">Zagreb</option>
                                     <option value="51000">Rijeka</option>
                     </select></td> 
                         </tr>                        
                                    <tr>
                             <td><label for="pbrStan">Adresa stanovanja:</label></td>
                             <td><select name="pbrStan">
-                                    <option value="<?= $pbrStan?>"><?= $pbrStan?></option>
                                     <option value="10000">Zagreb</option>
                                     <option value="51000">Rijeka</option>
                     </select></td> 
                         </tr>                         
                        <tr>
-                            <td><label for="datRodStud">Datum roðenja:</label></td>
-                            <td><input type="date" name="datRodStud"  value="<?= $datRodStud?>"></td> 
+                            <td><label for="datRodStud">Datum roÄ‘enja:</label></td>
+                            <td><input type="date" name="datRodStud"></td> 
                         </tr> 
                      <tr>
                             <td><label for="jmbgStud">JMBG:</label></td>
-                            <td><input type="text" required  pattern=".{13}" title="JMBG mora imati 13 znamenaka" name="jmbgStud"  value="<?= $jmbgStud?>"></td> 
+                            <td><input type="text" required  pattern=".{13}" title="JMBG mora imati 13 znamenaka" name="jmbgStud" value="<?php echo(rand(1000,9999)."555555555");?>"></td> 
                         </tr>   
-                        <tr><td colspan="2"><input type="submit" name="uredi" value="Uredi studenta"></td></tr>
+                        <tr><td colspan="2"><input type="submit" name="unesi" value="Unesi studenta"></td></tr>
                     </tbody>
                                        
                     
@@ -135,19 +106,16 @@ D-elete
                 <?php  while($stud=$result->fetch_assoc()){ 
                     
                  echo  "<li>"
-                    .$stud['mbrStud']
-                         ." ,"
-                    .$stud['imeStud']
+                    . "<a href='StudUpdate.php?mbrStud=".$stud['mbrStud']."'>".$stud['imeStud']."</a>" 
                          ." ,"
                          .$stud['datRodStud']
-                         ." prebivalište:"
+                         ." prebivaliÅ¡te:"
                          .$stud['pbrRod']
                          ." studira u:"
                          .$stud['pbrStan']
                          ." JMBG:"
                          .$stud['jmbgStud']
-                   ." <a href='?mbrStud=".$stud['mbrStud']."'>edit</a>"      
-                   ."</li>";  
+                         ."</li>";  
                 }  ?>
             </ul>
             
