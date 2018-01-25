@@ -9,15 +9,18 @@ if(isset($_POST['uredi'])){
             . ", `pbrRod`=?"
             . ", `pbrStan`=?"
             . ", `datRodStud`=?"
-            . ", `jmbgStud`=?  WHERE  `mbrStud`=?");
-$stmt->bind_param("ssiisss"
+            . ", `jmbgStud`=?"            
+            . ", `updated_at`=?  "
+            . "WHERE  `mbrStud`=?");
+$stmt->bind_param("ssiisssi"
         ,$_POST['imeStud']
         ,$_POST['prezStud']
         ,$_POST['pbrRod']
         ,$_POST['pbrStan']
         ,$_POST['datRodStud']
         ,$_POST['jmbgStud']
-        ,$updated_at);
+        ,$updated_at
+        ,$_POST['mbrStud']);
 
 if ( false===$stmt ) {
   die ('prepare() failed: ' . $mysqli->error);
@@ -37,7 +40,6 @@ if (strlen($_POST['prezStud'])<3){
 if($validate==TRUE){
 if($stmt->execute()){
     echo "Uspješno smo uredili studenta<br>";
-    var_dump( $stmt);
 }
 else{
     echo "Dogodila se greška kod uređivanja<br>";
@@ -133,6 +135,8 @@ D-elete
                 <?php  while($stud=$result->fetch_assoc()){ 
                     
                  echo  "<li>"
+                    .$stud['mbrStud']
+                         ." ,"
                     .$stud['imeStud']
                          ." ,"
                          .$stud['datRodStud']
@@ -142,7 +146,8 @@ D-elete
                          .$stud['pbrStan']
                          ." JMBG:"
                          .$stud['jmbgStud']
-                         ."</li>";  
+                   ." <a href='?mbrStud=".$stud['mbrStud']."'>edit</a>"      
+                   ."</li>";  
                 }  ?>
             </ul>
             
