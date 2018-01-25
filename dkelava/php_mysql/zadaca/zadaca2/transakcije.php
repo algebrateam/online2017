@@ -16,9 +16,7 @@ $error_num=0;
 
 echo "Započinjemo ".nl2br("neku transakciju...");
 
-//$query="BEGIN";
-$query="START TRANSACTION";
-
+$query="BEGIN";
 $result=$mysqli->query($query);
 
 
@@ -30,10 +28,7 @@ $result=$mysqli->query($query);
 if(!$result) $error_num++;
 
 
-//$query ="SAVEPOINT SAVE1";
-
-$query = "INSERT INTO mjesto1 (pbr,nazMjesto, sifZupanija)
-VALUES (22222,'Zzzzzz',789);";
+$query ="SAVEPOINT SAVE1";
 
 $query = "INSERT INTO mjesto1 (pbr,nazMjesto, sifZupanija)
 VALUES (22222,'Zzzzzz',789);";
@@ -42,9 +37,7 @@ $result=$mysqli->query($query);
 
 if(!$result) $error_num++;
 
-$result=$mysqli->query($query);
-
-
+//$result=$mysqli->query($query); uzrok problema
 
 // Pokušamo napraviti grešku unijevši u nepostojeći stupac pbr1
 $query = <<<EOD
@@ -55,24 +48,17 @@ EOD;
 
 $result=$mysqli->query($query);
 	
-if(!	$result) $error_num++;
+if(!$result) $error_num++;
 
 echo "<br> broj gresaka: ".$error_num;
 
-/**/
-
-
+/*
 ($error_num<1)? $query="COMMIT": $query="ROLLBACK TO SAVE1";
-
-
+*/
 $query ="COMMIT";
 
 
 $result=$mysqli->query($query);
-
-$query ="COMMIT";
-$result=$mysqli->query($query);
-/**/
 $mysqli->close();
 //echo " unešen ID:". mysql_insert_id();
 
