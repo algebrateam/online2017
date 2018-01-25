@@ -81,7 +81,7 @@ D-elete
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>
+        <div><span></span>
             <form action="" method="post">
                 <input type="hidden" name="mbrStud" value="<?php echo $_GET['mbrStud']; ?>">
                 <table cellpadding="0">
@@ -107,7 +107,8 @@ D-elete
       }
       $adresaPbrRod=$data[$pbrRod];
       $adresaPbrStan=$data[$pbrStan];
-        ?>
+       
+      ?>
                         <tr>
                             <td><label for="pbrRod">Adresa prebivališta:</label></td>
                             <td><select name="pbrRod">
