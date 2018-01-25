@@ -106,7 +106,7 @@ D-elete
                 <?php  while($stud=$result->fetch_assoc()){ 
                     
                  echo  "<li>"
-                    .$stud['imeStud']
+                    . "<a href='StudUpdate.php?mbrStud=".$stud['mbrStud']."'>".$stud['imeStud']."</a>" 
                          ." ,"
                          .$stud['datRodStud']
                          ." prebivalište:"
