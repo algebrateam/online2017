@@ -91,13 +91,13 @@ D-elete
     <div id="header-wrapper">
         <div id="header" class="container">
             <div id="logo">
-                <h1><span class="icon icon-cog"></span><a href="#">Algebra Online 2017</a></h1>
+                <h1><span class="icon icon-group"></span><a href="#">Algebra Online 2017</a></h1>
                 <div id="menu">
                     <ul>
                         <li class="current_page_item"><a href="#" accesskey="1" title="">Početna</a></li>
                         <li><a target="_blank" href="https://github.com/algebrateam/online2017" accesskey="2" title="">GIT</a></li>
                         <li><a target="_blank" href="https://trello.com/" accesskey="3" title="">Trello</a></li>
-                        <li><a href="#" accesskey="4" title="">O nama</a></li>
+                        <li><a target="_blank" href="https://github.com/algebrateam/online2017/graphs/contributors" accesskey="4" title="">O nama</a></li>
                     </ul>
                 </div>
             </div>
@@ -113,18 +113,18 @@ D-elete
                     <thead>
                         <tr>
                             <div class="title">
-                                <h2>Uredi studenta</h2>
+                                <h2 class="icon icon-edit"> Uredi studenta</h2>
                             </div>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><label for="imeStud">Ime studenta:</label></td>
-                            <td><input type="text" name="imeStud" required="TRUE"  pattern=".{3,}" title="Ime studenta mora biti minimalno 3 znaka" value="<?= $imeStud ?>"></td> 
+                            <td><input class="text" type="text" name="imeStud" required="TRUE"  pattern=".{3,}" title="Ime studenta mora biti minimalno 3 znaka" value="<?= $imeStud ?>"></td>
                         </tr>
                         <tr>
                             <td><label for="prezStud">Prezime studenta:</label></td>
-                            <td><input type="text" name="prezStud" required="TRUE"  pattern=".{3,}" title="Prezime studenta mora biti minimalno 3 znaka" value="<?= $prezStud ?>"></td> 
+                            <td><input class="text" type="text" name="prezStud" required="TRUE"  pattern=".{3,}" title="Prezime studenta mora biti minimalno 3 znaka" value="<?= $prezStud ?>"></td>
                         </tr>
                         </tr>
                         <?php
@@ -138,7 +138,7 @@ D-elete
       ?>
                         <tr>
                             <td><label for="pbrRod">Adresa prebivališta:</label></td>
-                            <td><select name="pbrRod">
+                            <td><select class="text" name="pbrRod">
                                     <option value="<?= $pbrRod ?>"><?= $adresaPbrRod ?></option>
 <?php
 mysqli_data_seek($resultMjesto, 0);   
@@ -151,7 +151,7 @@ printf("<option value='%d'>%s</option>",$mjesto['pbr'],$mjesto['nazMjesto'] );
                         </tr>                        
                         <tr>
                             <td><label for="pbrStan">Adresa stanovanja:</label></td>
-                            <td><select name="pbrStan">
+                            <td><select class="text" name="pbrStan">
                                     <option value="<?= $pbrStan ?>"><?= $adresaPbrStan ?></option>
 <?php
 mysqli_data_seek($resultMjesto, 0);      
@@ -163,11 +163,11 @@ printf("<option value='%d'>%s</option>",$mjesto['pbr'],$mjesto['nazMjesto'] );
                         </tr>                         
                         <tr>
                             <td><label for="datRodStud">Datum rođenja:</label></td>
-                            <td><input type="date" name="datRodStud"  value="<?php echo substr($datRodStud, 0, 10) ?>"></td> 
+                            <td><input class="text" type="date" name="datRodStud"  value="<?php echo substr($datRodStud, 0, 10) ?>"></td>
                         </tr> 
                         <tr>
                             <td><label for="jmbgStud">JMBG:</label></td>
-                            <td><input type="text" required  pattern=".{13}" title="JMBG mora imati 13 znamenaka" name="jmbgStud"  value="<?= $jmbgStud ?>"></td> 
+                            <td><input class="text" type="text" required  pattern=".{13}" title="JMBG mora imati 13 znamenaka" name="jmbgStud"  value="<?= $jmbgStud ?>"></td>
                         </tr>   
                         <tr><td colspan="2"><input type="submit" class="button" name="uredi" value="Uredi studenta"></td></tr>
                     </tbody>
@@ -203,7 +203,7 @@ printf("<option value='%d'>%s</option>",$mjesto['pbr'],$mjesto['nazMjesto'] );
         </div>
     </div>
     <div id="copyright" class="container">
-        <p>&copy; Untitled.</p>
+        <p>&copy; 2018</p>
     </div>
     </body>
 </html>
