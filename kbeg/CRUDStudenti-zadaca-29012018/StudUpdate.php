@@ -76,18 +76,45 @@ D-elete
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">-->
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>TODO supply a title</title>
+            <meta name="keywords" content="" />
+            <meta name="description" content="" />
+            <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
+            <link href="default.css" rel="stylesheet" type="text/css" media="all" />
+            <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+            <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
     </head>
     <body>
+    <div id="header-wrapper">
+        <div id="header" class="container">
+            <div id="logo">
+                <h1><span class="icon icon-cog"></span><a href="#">Algebra Online 2017</a></h1>
+                <div id="menu">
+                    <ul>
+                        <li class="current_page_item"><a href="#" accesskey="1" title="">Početna</a></li>
+                        <li><a target="_blank" href="https://github.com/algebrateam/online2017" accesskey="2" title="">GIT</a></li>
+                        <li><a target="_blank" href="https://trello.com/" accesskey="3" title="">Trello</a></li>
+                        <li><a href="#" accesskey="4" title="">O nama</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="page-wrapper">
+
+        <div id="page" class="container">
         <div><span></span>
             <form action="" method="post">
                 <input type="hidden" name="mbrStud" value="<?php echo $_GET['mbrStud']; ?>">
                 <table cellpadding="0">
                     <thead>
                         <tr>
-                            <th colspan="2"> Uredi studenta</th>
+                            <div class="title">
+                                <h2>Uredi studenta</h2>
+                            </div>
                         </tr>
                     </thead>
                     <tbody>
@@ -142,44 +169,41 @@ printf("<option value='%d'>%s</option>",$mjesto['pbr'],$mjesto['nazMjesto'] );
                             <td><label for="jmbgStud">JMBG:</label></td>
                             <td><input type="text" required  pattern=".{13}" title="JMBG mora imati 13 znamenaka" name="jmbgStud"  value="<?= $jmbgStud ?>"></td> 
                         </tr>   
-                        <tr><td colspan="2"><input type="submit" name="uredi" value="Uredi studenta"></td></tr>
+                        <tr><td colspan="2"><input type="submit" class="button" name="uredi" value="Uredi studenta"></td></tr>
                     </tbody>
-
-
                 </table>
-
-
-
             </form>
 
+        </div>
+        </div>
+        </div>
+    <div id="wrapper2">
+        <div id="tools">
             <ul>
                 <?php
                 while ($stud = $result->fetch_assoc()) {
 
-                  echo "<li>"
-                  . $stud['mbrStud']
-                  . " ,"
-                  . $stud['imeStud']
-                  . " ,"
-                  . $stud['datRodStud']
-                  . " prebivalište:"
-                  . $stud['pbrRod']
-                  . " studira u:"
-                  . $stud['pbrStan']
-                  . " JMBG:"
-                  . $stud['jmbgStud']
-                  . " <a href='?mbrStud=" . $stud['mbrStud'] . "'>edit</a>"
-                  . "</li>";
+                    echo "<li>"
+                        . $stud['mbrStud']
+                        . " ,"
+                        . $stud['imeStud']
+                        . " ,"
+                        . $stud['datRodStud']
+                        . " prebivalište:"
+                        . $stud['pbrRod']
+                        . " studira u:"
+                        . $stud['pbrStan']
+                        . " JMBG:"
+                        . $stud['jmbgStud']
+                        . " <a href='?mbrStud=" . $stud['mbrStud'] . "'>edit</a>"
+                        . "</li>";
                 }
                 ?>
             </ul>
-
-
-
-
-
-
-
         </div>
+    </div>
+    <div id="copyright" class="container">
+        <p>&copy; Untitled.</p>
+    </div>
     </body>
 </html>
