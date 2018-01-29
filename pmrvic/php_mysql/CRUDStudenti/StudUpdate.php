@@ -114,6 +114,12 @@ D-elete
                             <td><select name="pbrRod">
                                     <option value="<?= $pbrRod ?>"><?= $adresaPbrRod ?></option>
 <?php
+$data = array();
+      while ($mjesto = $resultMjesto->fetch_assoc()) {
+            $data[$mjesto['pbr']]=$mjesto['nazMjesto'];
+      }
+      $adresaPbrRod=$data[$pbrRod];
+      $adresaPbrStan=$data[$pbrStan];
 mysqli_data_seek($resultMjesto, 0);   
       while ($mjesto = $resultMjesto->fetch_assoc()) {
 printf("<option value='%d'>%s</option>",$mjesto['pbr'],$mjesto['nazMjesto'] );
