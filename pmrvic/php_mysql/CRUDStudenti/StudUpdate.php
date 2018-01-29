@@ -114,6 +114,12 @@ D-elete
                             <td><select name="pbrRod">
                                     <option value="<?= $pbrRod ?>"><?= $adresaPbrRod ?></option>
 <?php
+$data = array();
+      while ($mjesto = $resultMjesto->fetch_assoc()) {
+            $data[$mjesto['pbr']]=$mjesto['nazMjesto'];
+      }
+      $adresaPbrRod=$data[$pbrRod];
+      $adresaPbrStan=$data[$pbrStan];
 mysqli_data_seek($resultMjesto, 0);   
       while ($mjesto = $resultMjesto->fetch_assoc()) {
 printf("<option value='%d'>%s</option>",$mjesto['pbr'],$mjesto['nazMjesto'] );
@@ -153,24 +159,29 @@ printf("<option value='%d'>%s</option>",$mjesto['pbr'],$mjesto['nazMjesto'] );
             </form>
 
             <ul>
-                <?php
-                while ($stud = $result->fetch_assoc()) {
-
-                  echo "<li>"
-                  . $stud['mbrStud']
-                  . " ,"
-                  . $stud['imeStud']
-                  . " ,"
-                  . $stud['datRodStud']
-                  . " prebivalište:"
-                  . $stud['pbrRod']
-                  . " studira u:"
-                  . $stud['pbrStan']
-                  . " JMBG:"
-                  . $stud['jmbgStud']
-                  . " <a href='?mbrStud=" . $stud['mbrStud'] . "'>edit</a>"
-                  . "</li>";
-                }
+                <?php 
+                  $result_table = "<table border='1'>";
+                  $result_table .= "<tr>";
+                  $result_table .= "<th>Ime</th>";
+                  $result_table .= "<th>Dat. Rodj.</th>";
+                  $result_table .= "<th>Prebivaliste</th>";
+                  $result_table .= "<th>Studira u</th>";
+                  $result_table .= "<th>JMBG</th>";
+                  $result_table .= "</tr>";
+                  
+                    while($stud=$result->fetch_assoc()){ 
+                    $result_table .= "<tr>";   
+                    $result_table .= "<td>".$stud['imeStud']."</td>";
+                    $result_table .= "<td>".$stud['datRodStud']."</td>";
+                    $result_table .= "<td>".$stud['pbrRod']."</td>";
+                    $result_table .= "<td>".$stud['pbrStan']."</td>";
+                    $result_table .= "<td>".$stud['jmbgStud']."</td>";
+                    $result_table .= "</tr>";
+                    }
+                  
+                  $result_table .= "</table>";
+                  
+                  echo $result_table;
                 ?>
             </ul>
 

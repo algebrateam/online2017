@@ -103,20 +103,30 @@ D-elete
             </form>
             
             <ul>
-                <?php  while($stud=$result->fetch_assoc()){ 
-                    
-                 echo  "<li>"
-                    .$stud['imeStud']
-                         ." ,"
-                         .$stud['datRodStud']
-                         ." prebivalište:"
-                         .$stud['pbrRod']
-                         ." studira u:"
-                         .$stud['pbrStan']
-                         ." JMBG:"
-                         .$stud['jmbgStud']
-                         ."</li>";  
-                }  ?>
+                <?php 
+                  $result_table = "<table border='1'>";
+                  $result_table .= "<tr>";
+                  $result_table .= "<th>Ime</th>";
+                  $result_table .= "<th>Dat. Rodj.</th>";
+                  $result_table .= "<th>Prebivaliste</th>";
+                  $result_table .= "<th>Studira u</th>";
+                  $result_table .= "<th>JMBG</th>";
+                  $result_table .= "</tr>";
+                  
+                    while($stud=$result->fetch_assoc()){ 
+                    $result_table .= "<tr>";   
+                    $result_table .= "<td>".$stud['imeStud']."</td>";
+                    $result_table .= "<td>".$stud['datRodStud']."</td>";
+                    $result_table .= "<td>".$stud['pbrRod']."</td>";
+                    $result_table .= "<td>".$stud['pbrStan']."</td>";
+                    $result_table .= "<td>".$stud['jmbgStud']."</td>";
+                    $result_table .= "</tr>";
+                    }
+                  
+                  $result_table .= "</table>";
+                  
+                  echo $result_table;
+                ?>
             </ul>
             
         
