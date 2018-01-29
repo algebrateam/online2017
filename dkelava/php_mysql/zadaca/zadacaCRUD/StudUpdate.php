@@ -11,7 +11,7 @@ if(isset($_POST['uredi'])){
             . ", `pbrStan`=? "
             . ", `datRodStud`=? "
             . ", `jmbgStud`=?, `updated_at`=? WHERE  `mbrStud`=?");
-$stmt->bind_param("ssiisisi"
+$stmt->bind_param("ssiisssi"
         ,$_POST['imeStud']
         ,$_POST['prezStud']
         ,$_POST['pbrRod']
