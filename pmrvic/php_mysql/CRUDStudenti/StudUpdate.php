@@ -37,7 +37,10 @@ if (isset($_POST['uredi'])) {
     $validate = FALSE;
     echo "<span style='color:red'>Broj znakova prezimena mora biti veći od 3</span><hr>";
   }
-
+  if (isset($_POST['uredi'])&& !filter_var($_POST['emailStud'], FILTER_VALIDATE_EMAIL)) {
+    $validate = FALSE;
+    echo "<span style='color:red'>(PHPvalidation:) Email adresa nije ispravna</span><hr>";
+  }
   if ($validate == TRUE) {
     if ($stmt->execute()) {
       echo "Uspješno smo uredili studenta<br>";
@@ -98,6 +101,10 @@ D-elete
                         <tr>
                             <td><label for="prezStud">Prezime studenta:</label></td>
                             <td><input type="text" name="prezStud" required="TRUE"  pattern=".{3,}" title="Prezime studenta mora biti minimalno 3 znaka" value="<?= $prezStud ?>"></td> 
+                        </tr>
+                         <tr>
+                            <td><label for="emailStud">email studenta:</label></td>
+                            <td><input type="email" name="emailStud" required="TRUE" title="Email adresa mora biti ispravna" value=""></td> 
                         </tr>
                         </tr>
                         <?php
