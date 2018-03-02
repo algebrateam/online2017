@@ -159,6 +159,9 @@ printf("<option value='%d'>%s</option>",$mjesto['pbr'],$mjesto['nazMjesto'] );
 
             </form>
 
+            <h3>Student sa najvise polozenih ispita</h3>
+            <a href="studShow.php?mbrStud=1173">Gordan Boršić</a>
+            
             <ul>
                 <?php
                 while ($stud = $result->fetch_assoc()) {

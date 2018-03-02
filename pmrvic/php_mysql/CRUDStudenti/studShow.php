@@ -12,7 +12,7 @@ if(isset($_GET['mbrStud'])){
     ,jmbgStud
     ,nazPred
     ,datIspit 
-     FROM stud INNER JOIN ispit ON stud.mbrStud=ispit.`mbrStud`
+     FROM stud LEFT JOIN ispit ON stud.mbrStud=ispit.`mbrStud`
 INNER JOIN pred ON ispit.`sifPred`=pred.`sifPred` 
 WHERE ocjena > 1 AND stud.mbrStud =?");
   $stmt->bind_param("i", $_GET['mbrStud']);
@@ -21,32 +21,35 @@ WHERE ocjena > 1 AND stud.mbrStud =?");
   }
   $stmt->execute();
   $stmt->bind_result($imeStud, $prezStud, $pbrRod, $pbrStan, $datRodStud, $jmbgStud,$nazPred,$datIspit);
- 
+  $stmt->store_result();
+$stmt->fetch(); 
 }
 
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title><?= $imeStud." ".$prezStud?></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
             <div>
-                <?php 
-                 while($stmt->fetch()){
-                   echo $imeStud." ".$prezStud;
-                 }
-                ?>
+                
                 
                 <h1><?= $imeStud." ".$prezStud?></h1>
                 Adresa: <?= $pbrRod?><br>
-                Stanuje u : <?= $pbrStan?>
-                Položio je:
-                <?php 
-                echo $nazPred." ".$datIspit;
+                Stanuje u : <?= $pbrStan?><br>
+                <strong>Položeni ispiti:</strong><br>
                 
+                <?php 
+                 $stmt->data_seek(1);
+                 while($stmt->fetch()){
+                ?>
+                <li> <?= $nazPred ?> <?= $datIspit ?></li>
+                
+                <?php 
+                }                
                 ?>
                 
         </div>
